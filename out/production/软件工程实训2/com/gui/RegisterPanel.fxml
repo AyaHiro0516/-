@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gui.RegisterPanelCtr">
+   <children>
+      <Text layoutX="154.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="账户类型:">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Text>
+      <Text layoutX="155.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="用 户 名:">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Text>
+      <Text layoutX="155.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="密     码:">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Text>
+      <Text layoutX="153.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="确认密码:">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Text>
+      <Text layoutX="152.0" layoutY="208.0" strokeType="OUTSIDE" strokeWidth="0.0" text="身份证号:">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Text>
+      <Text layoutX="153.0" layoutY="304.0" strokeType="OUTSIDE" strokeWidth="0.0" text="详细地址:">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Text>
+      <Text layoutX="157.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-mail:">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Text>
+      <TextField fx:id="usernameText" layoutX="237.0" layoutY="63.0" />
+      <TextField fx:id="idnumText" layoutX="237.0" layoutY="190.0" />
+      <PasswordField fx:id="passwordText" layoutX="237.0" layoutY="105.0" />
+      <PasswordField fx:id="repasswordText" layoutX="237.0" layoutY="147.0" />
+      <TextField fx:id="emailText" layoutX="237.0" layoutY="233.0" />
+      <TextArea fx:id="adressText" layoutX="237.0" layoutY="276.0" prefHeight="50.0" prefWidth="202.0" />
+      <Button fx:id="Btn_submit" layoutX="153.0" layoutY="343.0" mnemonicParsing="false" onAction="#submition" prefHeight="40.0" prefWidth="95.0" text="提交" textFill="#00e40f" />
+      <Button fx:id="Btn_backward" layoutX="344.0" layoutY="343.0" mnemonicParsing="false" onAction="#backward" prefHeight="40.0" prefWidth="95.0" text="返回" textFill="#030bf2" />
+      <ChoiceBox fx:id="selectBox" layoutX="237.0" layoutY="16.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="30.0" prefWidth="202.0" />
+      <Text fx:id="statusText" fill="RED" layoutX="448.0" layoutY="369.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="144.30029296875">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
