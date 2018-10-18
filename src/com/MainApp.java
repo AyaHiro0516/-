@@ -1,5 +1,6 @@
 package com;
 
+import com.accountType.Account;
 import com.accountType.CreditAccount;
 import com.accountType.LoanCreditAccount;
 import com.accountType.LoanSavingAccount;
@@ -15,13 +16,14 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.File;
+import java.net.Socket;
 
 public class MainApp extends Application {
     private static Stage stage;
     public static File idFile=new File("F:/test/id.txt");
     public static File dataFile=new File("F:/test/data.txt");;
     public static Bank bank=Bank.getBank();
-
+    public static Socket client=null;   //为客户端添加连接
     @Override
     public void start(Stage primaryStage) throws Exception{
         stage=primaryStage;
@@ -42,7 +44,7 @@ public class MainApp extends Application {
 //        System.out.println(bank.login("user1","null").getAccountType());
 //        System.out.println(bank.login("user2","null").getAccountType());
 //        System.out.println(bank.getAccountsNum());
-        //bank.upDate();
+//        bank.upDate();
         initMainPanel();
     }
 

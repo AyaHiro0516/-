@@ -54,7 +54,7 @@ public class RegisterPanelCtr {
         }else if (map.containsKey(username) && map.get(username).getPersonId().equals(idnum)){
             statusText.setText("账号已存在");
         }else {
-            if(password.equals(repassword)){
+            if(password.equals(repassword)){  //此处逻辑要修改  先检查密码
                 try{
                     map.put(username,MainApp.bank.register(password,username,idnum,email,accountType));
                     MainApp.bank.upDate();

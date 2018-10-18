@@ -15,6 +15,7 @@ abstract public class Account implements Serializable {
     private String adress;
     private String accountType;
     private double balance;
+    private boolean isOnline;
 
 
 
@@ -119,6 +120,14 @@ abstract public class Account implements Serializable {
         Account updateAC=this;
         updateAC.accountType=accountType;
         return updateAC;
+    }
+
+    public boolean getIsOnline() {
+        return isOnline;
+    }
+
+    public void setIsOnline(boolean online) {
+        isOnline = online;
     }
 
     final public Account deposit(double amount){
