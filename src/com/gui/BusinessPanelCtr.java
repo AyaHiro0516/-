@@ -11,6 +11,10 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.net.Socket;
+
 public class BusinessPanelCtr {
     @FXML
     private Button Btn_submit;
@@ -36,6 +40,11 @@ public class BusinessPanelCtr {
     private ChoiceBox selectBox;
     @FXML
     private Text statusText;
+
+    //客户端连接
+    private Socket client=null;
+    private ObjectInputStream ois=null;
+    private ObjectOutputStream oos=null;
 
     public Text getIdText() {
         return idText;

@@ -7,6 +7,7 @@ import com.exceptionType.RegisterException;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.Collection;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
@@ -18,6 +19,13 @@ public class ATMServer {
         ServerSocket server = new ServerSocket(20006);
         Socket client = null;
         bank.readData();
+        //设置所有账户下线
+        Collection<Account> col=bank.getAccounts().values();
+        for(Account account:col){
+            account.setIsOnline(false);
+        }
+        bank.upDate();
+
         System.out.println(bank.getAccounts().toString());
         //通过调用Executors类的静态方法，创建一个ExecutorService实例
         //ExecutorService接口是Executor接口的子接口
@@ -36,9 +44,16 @@ public class ATMServer {
         if (bank.getAccounts().containsKey(name) && bank.getAccounts().get(name).getPersonId().equals(idnum)){
             return false;
         }else {
-            bank.getAccounts().put(name,bank.register(password,name,idnum,email,accountType));
+              bank.getAccounts().put(name,bank.register(password,name,idnum,email,accountType));
             bank.upDate();
             return true;
         }
+    }
+    public  static int userLogin(String name, String password){
+        if (!bank.getAccounts().containsKey(name)){
+            return 1;
+        }else if (bank.getAccounts().get(name).getPassword().equals(password)){
+            return 2;
+        }else return 3;
     }
 }

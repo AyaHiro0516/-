@@ -3,6 +3,7 @@ package ATMServer;
 import com.accountType.Account;
 
 import java.io.*;
+
 import java.net.Socket;
 
 public class ServerThread implements Runnable{
@@ -23,16 +24,28 @@ public class ServerThread implements Runnable{
             String requestType=object.getRequestType();
             switch (requestType){
                 case "注册":
-                    if(ATMServer.registration(object.getFromPassword(),object.getFromName(),object.getFromIdNum(),
+                    if(!ATMServer.registration(object.getFromPassword(),object.getFromName(),object.getFromIdNum(),
                             object.getFromEmail(),object.getFromAccountType())){
-                        object.setAccount(ATMServer.bank.getAccounts().get(object.getFromName()));
-                        oos.writeObject(object);
-                    }else {
                         object.setFromName("null");
-                        oos.writeObject(object);
                     }
+                    oos.writeObject(object);
                     break;
                 case "登录":
+                    if (ATMServer.userLogin(object.getFromName(),object.getFromPassword())==1){
+                        object.setFromName("null");
+                        oos.writeObject(object);
+                    }else if (ATMServer.userLogin(object.getFromName(),object.getFromPassword())==2){
+                        String name=object.getFromName();
+                        object.setAccount(ATMServer.bank.login(name,object.getFromPassword())); //isOnline=false;
+                        object.setFromName("true");
+                        oos.writeObject(object);
+
+                        ATMServer.bank.getAccounts().get(name).setIsOnline(true);
+                        ATMServer.bank.upDate();  //更新账户的登录状态
+                    }else {
+                        object.setFromName("false");
+                        oos.writeObject(object);
+                    }
                     break;
                 case "业务":
                     break;

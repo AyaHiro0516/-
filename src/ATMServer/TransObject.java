@@ -16,7 +16,7 @@ public class TransObject implements Serializable{  //打包类
     private String fromAdress;
     private String toName;
     private String amount;
-    private Account account;
+    private Account account=null;
     public TransObject() {
     }
 

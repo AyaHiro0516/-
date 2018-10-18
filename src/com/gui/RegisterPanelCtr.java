@@ -1,5 +1,6 @@
 package com.gui;
 
+import ATMServer.TransObject;
 import com.MainApp;
 import com.accountType.*;
 import com.exceptionType.RegisterException;
@@ -7,6 +8,10 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.text.Text;
 
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.net.Socket;
 import java.util.TreeMap;
 
 public class RegisterPanelCtr {
@@ -31,6 +36,11 @@ public class RegisterPanelCtr {
     @FXML
     private Text statusText;
 
+    //客户端连接
+    public Socket client=null;
+    private ObjectInputStream ois=null;
+    private ObjectOutputStream oos=null;
+
     public ChoiceBox getSelectBox() {
         return selectBox;
     }
@@ -39,8 +49,7 @@ public class RegisterPanelCtr {
         this.selectBox = selectBox;
     }
 
-    public void submition(){
-        TreeMap<String,Account> map=MainApp.bank.getAccounts();
+    public void submition() throws IOException{
         String accountType=(String) selectBox.getValue();
         String username=usernameText.getText();
         String password=passwordText.getText();
@@ -51,13 +60,24 @@ public class RegisterPanelCtr {
         if (accountType.equals("") || username.equals("") || password.equals("") || repassword.equals("") ||
                 idnum.equals("") || email.equals("")|| adress.equals("")){
             statusText.setText("有信息未填写！");
-        }else if (map.containsKey(username) && map.get(username).getPersonId().equals(idnum)){
-            statusText.setText("账号已存在");
+        }else if (!password.equals(repassword)){
+            statusText.setText("密码不一致");
         }else {
-            if(password.equals(repassword)){  //此处逻辑要修改  先检查密码
-                try{
-                    map.put(username,MainApp.bank.register(password,username,idnum,email,accountType));
-                    MainApp.bank.upDate();
+            client=new Socket("127.0.0.1",20006);
+            oos=new ObjectOutputStream(client.getOutputStream());
+            ois=new ObjectInputStream(client.getInputStream());
+
+            TransObject object=new TransObject("注册");
+            object.setFromAccountType(accountType);
+            object.setFromName(username);
+            object.setFromPassword(password);
+            object.setFromIdNum(idnum);
+            object.setFromEmail(email);
+            object.setFromAdress(adress);
+            oos.writeObject(object);
+            try{
+                TransObject getObject=(TransObject)ois.readObject();
+                if (!getObject.getFromName().equals("null")){  //表示添加成功
                     selectBox.getSelectionModel().selectFirst();
                     usernameText.clear();
                     passwordText.clear();
@@ -66,13 +86,15 @@ public class RegisterPanelCtr {
                     emailText.clear();
                     adressText.clear();
                     statusText.setText("账户添加成功！");
-                }catch (RegisterException e){
-                    e.printStackTrace();
+                }else{
+                    statusText.setText("账号已存在！");
                 }
-            }else {
-                statusText.setText("密码不一致！");
+            }catch (ClassNotFoundException e){
+                e.printStackTrace();
             }
+            client.close();
         }
+
     }
     public void backward(){
         try {

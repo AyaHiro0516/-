@@ -91,7 +91,7 @@ public class MainApp extends Application {
         stage.show();
     }
     //进入业务页面
-    public static void initBusinessPanel(String username) throws Exception{
+    public static void initBusinessPanel(Account account) throws Exception{
         FXMLLoader loader=new FXMLLoader();
         loader.setLocation(MainApp.class.getResource("gui/BusinessPanel.fxml"));
         AnchorPane Panel=loader.load();
@@ -122,10 +122,10 @@ public class MainApp extends Application {
             }
         });
 
-        idText.setText(bank.getAccounts().get(username).getId()+"");
-        usernameText.setText(bank.getAccounts().get(username).getName());
-        balanceText.setText(bank.getAccounts().get(username).getBalance()+"");
-        String accountType=bank.getAccounts().get(username).getAccountType();
+        idText.setText(account.getId()+"");
+        usernameText.setText(account.getName());
+        balanceText.setText(account.getBalance()+"");
+        String accountType=account.getAccountType();
         switch (accountType){
             case "SavingAccount":
                 ceilingText.setText("未开通");
@@ -133,19 +133,19 @@ public class MainApp extends Application {
                 break;
             case "CreditAccount":
                 loanText.setText("未开通");
-                CreditAccount account=(CreditAccount)bank.getAccounts().get(username);
-                ceilingText.setText(account.getCeiling()+"");
+                CreditAccount account1=(CreditAccount)account;
+                ceilingText.setText(account1.getCeiling()+"");
                 break;
             case "LoanSavingAccount":
                 ceilingText.setText("未开通");
-                LoanSavingAccount account1=(LoanSavingAccount)bank.getAccounts().get(username);
-                loanText.setText(account1.getLoan()+"");
+                LoanSavingAccount account2=(LoanSavingAccount)account;
+                loanText.setText(account2.getLoan()+"");
                 choiceBox.getItems().addAll("借贷","还贷");
                 break;
             case "LoanCreditAccount":
-                LoanCreditAccount account2=(LoanCreditAccount)bank.getAccounts().get(username);
-                ceilingText.setText(account2.getCeiling()+"");
-                loanText.setText(account2.getLoan()+"");
+                LoanCreditAccount account3=(LoanCreditAccount)account;
+                ceilingText.setText(account3.getCeiling()+"");
+                loanText.setText(account3.getLoan()+"");
                 choiceBox.getItems().addAll("借贷","还贷");
                 break;
         }
