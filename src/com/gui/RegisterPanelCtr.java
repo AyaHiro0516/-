@@ -2,8 +2,6 @@ package com.gui;
 
 import ATMServer.TransObject;
 import com.MainApp;
-import com.accountType.*;
-import com.exceptionType.RegisterException;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.text.Text;
@@ -12,7 +10,6 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
-import java.util.TreeMap;
 
 public class RegisterPanelCtr {
     @FXML

@@ -1,7 +1,6 @@
 package ATMServer;
 
 import com.accountType.Account;
-import com.exceptionType.ATMException;
 
 import java.io.Serializable;
 

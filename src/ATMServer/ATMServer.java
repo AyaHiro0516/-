@@ -1,6 +1,5 @@
 package ATMServer;
 
-import com.Bank;
 import com.accountType.Account;
 import com.exceptionType.RegisterException;
 
@@ -34,7 +33,7 @@ public class ATMServer {
         while(flag){
             //等待客户端的连接
             client = server.accept();
-            System.out.println("与客户端连接成功！");
+            System.out.println(client.toString()+"与客户端连接成功！");
             service.execute(new ServerThread(client));
         }
         server.close();

@@ -16,35 +16,15 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.File;
-import java.net.Socket;
 
 public class MainApp extends Application {
     private static Stage stage;
     public static File idFile=new File("F:/test/id.txt");
     public static File dataFile=new File("F:/test/data.txt");;
-    public static Bank bank=Bank.getBank();
-    public static Socket client=null;   //为客户端添加连接
+
     @Override
     public void start(Stage primaryStage) throws Exception{
         stage=primaryStage;
-        bank.readData();
-//            bank.getAccounts().put("user1",bank.register("null","user1","null","null","LoanCreditAccount"));
-//            bank.getAccounts().put("user2",bank.register("null","user2","null","null","CreditAccount"));
-//            bank.getAccounts().put("user3",bank.register("null","user3","null","null","SavingAccount"));
-//            bank.getAccounts().put("user4",bank.register("null","user4","null","null","CreditAccount"));
-//            Account account=bank.deposit("user1",100);
-//            System.out.println(account.getBalance());
-//            account=bank.setCeiling("user1",50);
-//            account=bank.withdraw("user1",10);
-//            bank.transfer("user1","user2",50);
-//            bank.requestLoan("user1",100);
-//            bank.payLoan("user1",20);
-//        System.out.println(bank.login("user1","null").getBalance());
-//        System.out.println(bank.login("user2","null").getBalance());
-//        System.out.println(bank.login("user1","null").getAccountType());
-//        System.out.println(bank.login("user2","null").getAccountType());
-//        System.out.println(bank.getAccountsNum());
-//        bank.upDate();
         initMainPanel();
     }
 

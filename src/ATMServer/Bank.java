@@ -1,5 +1,6 @@
-package com;
+package ATMServer;
 
+import com.MainApp;
 import com.accountType.*;
 import com.exceptionType.ATMException;
 import com.exceptionType.AccountNotFoundException;

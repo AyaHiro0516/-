@@ -1,6 +1,6 @@
 package ATMServer;
 
-import com.accountType.Account;
+import com.exceptionType.ATMException;
 
 import java.io.*;
 
@@ -48,8 +48,31 @@ public class ServerThread implements Runnable{
                     }
                     break;
                 case "业务":
+                    String mode=object.getBusinessType();
+                    try{
+                        switch (mode){
+                            case "存款": ATMServer.bank.deposit(object.getFromName(),new Double(object.getAmount()));
+                                break;
+                            case "取款": ATMServer.bank.withdraw(object.getFromName(),new Double(object.getAmount()));
+                                break;
+                            case "转账": ATMServer.bank.transfer(object.getFromName(),object.getToName(),new Double(object.getAmount()));
+                                break;
+                            case "借贷": ATMServer.bank.requestLoan(object.getFromName(),new Double(object.getAmount()));
+                                break;
+                            case "还贷": ATMServer.bank.payLoan(object.getFromName(),new Double(object.getAmount()));
+                                break;
+                        }
+                        ATMServer.bank.upDate();
+                        object.setAccount(ATMServer.bank.getAccounts().get(object.getFromName()));
+                        object.setFromAccountType(ATMServer.bank.getAccounts().get(object.getFromName()).getAccountType());
+                    }catch (ATMException atmE){
+                        object.setFromName("null");
+                    }
+                    oos.writeObject(object);
                     break;
                 case "下线":
+                    ATMServer.bank.getAccounts().get(object.getFromName()).setIsOnline(false);
+                    ATMServer.bank.upDate();  //更新账户的登录状态
                     break;
             }
 
@@ -57,7 +80,7 @@ public class ServerThread implements Runnable{
             oos.close();
             client.close();
         }catch (Exception e){
-            e.printStackTrace();
+            //do something
         }
     }
 }

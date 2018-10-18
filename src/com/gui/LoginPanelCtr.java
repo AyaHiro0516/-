@@ -64,7 +64,6 @@ public class LoginPanelCtr {
         }catch (Exception e){
             e.printStackTrace();
         }
-
         client.close();
     }
     public void backward(){

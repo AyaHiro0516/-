@@ -1,16 +1,17 @@
 package com.gui;
 
+import ATMServer.TransObject;
 import com.MainApp;
 import com.accountType.CreditAccount;
 import com.accountType.LoanCreditAccount;
 import com.accountType.LoanSavingAccount;
-import com.exceptionType.ATMException;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
+import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
@@ -118,7 +119,7 @@ public class BusinessPanelCtr {
         this.selectBox = selectBox;
     }
 
-    public void submition(){
+    public void submition() throws IOException{
         String username=usernameText.getText();
         String mode=(String) selectBox.getValue();
         try {
@@ -128,62 +129,68 @@ public class BusinessPanelCtr {
                 statusText.setText("输入有误！");
                 return;
             }
-            switch (mode){  //判断操作类型
-                case "存款":
-                    MainApp.bank.deposit(username,amount);
-                    break;
-                case "取款":
-                    MainApp.bank.withdraw(username,amount);
-                    break;
-                case "转账":
-                    String transname=transnameTextField.getText();
-                    MainApp.bank.transfer(username,transname,amount);
-                    break;
-                case "借贷":
-                    MainApp.bank.requestLoan(username,amount);
-                    break;
-                case "还贷":
-                    MainApp.bank.payLoan(username,amount);
-                    break;
+
+            client=new Socket("127.0.0.1",20006);  //客户端连接
+            oos=new ObjectOutputStream(client.getOutputStream());
+            ois=new ObjectInputStream(client.getInputStream());
+
+            TransObject object=new TransObject("业务");
+            object.setFromName(username);
+            object.setAmount(amountTextField.getText());
+            object.setToName(transnameTextField.getText());
+            object.setBusinessType(mode);
+            oos.writeObject(object);
+
+            TransObject getobject=(TransObject)ois.readObject();
+            if (getobject.getFromName().equals("null")){
+                statusText.setText("操作失败！");
+                amountTextField.clear();
+            }else {
+                statusText.setText("操作成功！");
+                //更新面板信息
+                amountTextField.clear();
+                String accountType=getobject.getFromAccountType();
+                balanceText.setText(getobject.getAccount().getBalance()+"");
+                switch (accountType){
+                    case "SavingAccount":
+                        //do nothing
+                        break;
+                    case "CreditAccount":
+                        CreditAccount account1=(CreditAccount)getobject.getAccount();
+                        ceilingText.setText(account1.getCeiling()+"");
+                        break;
+                    case "LoanSavingAccount":
+                        LoanSavingAccount account2=(LoanSavingAccount)getobject.getAccount();
+                        loanText.setText(account2.getLoan()+"");
+                        break;
+                    case "LoanCreditAccount":
+                        LoanCreditAccount account3=(LoanCreditAccount)getobject.getAccount();
+                        ceilingText.setText(account3.getCeiling()+"");
+                        loanText.setText(account3.getLoan()+"");
+                        break;
+                }
             }
-            MainApp.bank.upDate();
-            statusText.setText("操作成功！");
-        }catch (ATMException e ){
+
+            client.close();
+        }catch (ClassNotFoundException e ){
             e.printStackTrace();
-            amountTextField.clear();
-            statusText.setText("操作失败！");
         }catch (NumberFormatException e){
             //e.printStackTrace();
             amountTextField.clear();
             statusText.setText("输入有误！");
-        }
-        amountTextField.clear();
-        //更新面板信息
-        String accountType=MainApp.bank.getAccounts().get(username).getAccountType();
-        balanceText.setText(MainApp.bank.getAccounts().get(username).getBalance()+"");
-        switch (accountType){
-            case "SavingAccount":
-                //do nothing
-                break;
-            case "CreditAccount":
-                CreditAccount account=(CreditAccount)MainApp.bank.getAccounts().get(username);
-                ceilingText.setText(account.getCeiling()+"");
-                break;
-            case "LoanSavingAccount":
-                LoanSavingAccount account1=(LoanSavingAccount)MainApp.bank.getAccounts().get(username);
-                loanText.setText(account1.getLoan()+"");
-                break;
-            case "LoanCreditAccount":
-                LoanCreditAccount account2=(LoanCreditAccount)MainApp.bank.getAccounts().get(username);
-                ceilingText.setText(account2.getCeiling()+"");
-                loanText.setText(account2.getLoan()+"");
-                break;
         }
 
     }
 
     public void backward(){
         try{
+            client=new Socket("127.0.0.1",20006);  //客户端连接
+            oos=new ObjectOutputStream(client.getOutputStream());
+            TransObject object=new TransObject("下线");
+            object.setFromName(usernameText.getText());
+
+            oos.writeObject(object);
+            client.close();
             MainApp.initMainPanel();
         }catch (Exception e){
             e.printStackTrace();
