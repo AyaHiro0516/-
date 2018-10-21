@@ -38,7 +38,7 @@ public class BusinessPanelCtr {
     @FXML
     private TextField transnameTextField;
     @FXML
-    private ChoiceBox selectBox;
+    private ChoiceBox<String> selectBox;
     @FXML
     private Text statusText;
 
@@ -111,15 +111,15 @@ public class BusinessPanelCtr {
         this.transnameTextField = transnameTextField;
     }
 
-    public ChoiceBox getSelectBox() {
+    public ChoiceBox<String> getSelectBox() {
         return selectBox;
     }
 
-    public void setSelectBox(ChoiceBox selectBox) {
+    public void setSelectBox(ChoiceBox<String> selectBox) {
         this.selectBox = selectBox;
     }
 
-    public void submition() throws IOException{
+    public void submition() {
         String username=usernameText.getText();
         String mode=(String) selectBox.getValue();
         try {
@@ -129,7 +129,6 @@ public class BusinessPanelCtr {
                 statusText.setText("输入有误！");
                 return;
             }
-
             client=new Socket("127.0.0.1",20006);  //客户端连接
             oos=new ObjectOutputStream(client.getOutputStream());
             ois=new ObjectInputStream(client.getInputStream());
@@ -172,10 +171,12 @@ public class BusinessPanelCtr {
             }
 
             client.close();
+        }catch (IOException e){
+            statusText.setText("连接服务器失败！");
         }catch (ClassNotFoundException e ){
+            statusText.setText("写入账户失败！");
             e.printStackTrace();
         }catch (NumberFormatException e){
-            //e.printStackTrace();
             amountTextField.clear();
             statusText.setText("输入有误！");
         }
@@ -188,10 +189,13 @@ public class BusinessPanelCtr {
             oos=new ObjectOutputStream(client.getOutputStream());
             TransObject object=new TransObject("下线");
             object.setFromName(usernameText.getText());
-
             oos.writeObject(object);
+
             client.close();
             MainApp.initMainPanel();
+        }catch (IOException e){
+            //e.printStackTrace();
+            statusText.setText("连接服务器失败！");
         }catch (Exception e){
             e.printStackTrace();
         }

@@ -60,7 +60,7 @@ public class MainApp extends Application {
         AnchorPane Panel=loader.load();
 
         RegisterPanelCtr ctr=loader.getController();
-        ChoiceBox choiceBox=ctr.getSelectBox();
+        ChoiceBox<String> choiceBox=ctr.getSelectBox();
         choiceBox.getItems().addAll("SavingAccount","CreditAccount","LoanSavingAccount","LoanCreditAccount");
         choiceBox.getSelectionModel().selectFirst();
 
@@ -84,7 +84,7 @@ public class MainApp extends Application {
         Text loanText=ctr.getLoanText();
         Text transnameText=ctr.getTransnameText();
         TextField transnameTextField=ctr.getTransnameTextField();
-        ChoiceBox choiceBox=ctr.getSelectBox();
+        ChoiceBox<String> choiceBox=ctr.getSelectBox();
 
         transnameText.setVisible(false);
         transnameTextField.setVisible(false);

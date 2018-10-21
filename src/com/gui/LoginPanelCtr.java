@@ -31,40 +31,50 @@ public class LoginPanelCtr {
     private ObjectInputStream ois=null;
     private ObjectOutputStream oos=null;
 
-    public void submition() throws IOException{
+    public void submition() {
         String username=usernameText.getText();
         if (!username.equals(lastUsername)){
             inputTimes=3;
             lastUsername=username;
         }
         String password=passwordText.getText();
+        if (username.equals("") || password.equals("")){
+            statusText.setText("账户或密码不能为空！");
+            return;
+        }
+        try {
+            client=new Socket("127.0.0.1",20006);  //客户端连接
+            oos=new ObjectOutputStream(client.getOutputStream());
+            ois=new ObjectInputStream(client.getInputStream());
 
-        client=new Socket("127.0.0.1",20006);  //客户端连接
-        oos=new ObjectOutputStream(client.getOutputStream());
-        ois=new ObjectInputStream(client.getInputStream());
+            TransObject object=new TransObject("登录");
+            object.setFromName(username);
+            object.setFromPassword(password);
+            oos.writeObject(object);
 
-        TransObject object=new TransObject("登录");
-        object.setFromName(username);
-        object.setFromPassword(password);
-        oos.writeObject(object);
-
-        try{
             TransObject getObject=(TransObject)ois.readObject();
             if (getObject.getFromName().equals("null")){
                 statusText.setText("无该学生信息！");
             }else if(getObject.getFromName().equals("false") && inputTimes>0){
                 statusText.setText("密码错误！"+"你还有 "+(inputTimes--)+" 次机会。");
             }else if (getObject.getFromName().equals("true") && inputTimes>=0){
-                if (getObject.getAccount().getIsOnline()==true){
+                if (getObject.getAccount().getIsOnline()){
                     statusText.setText("该账号已在其他客户端上线！");
                 }else MainApp.initBusinessPanel(getObject.getAccount());
             }else {
                 MainApp.initMainPanel();
             }
+
+            client.close();
+        }catch (IOException e){
+            statusText.setText("连接服务器失败！");
+        }catch (ClassNotFoundException e){
+            statusText.setText("写入账户失败！");
+            e.printStackTrace();
         }catch (Exception e){
             e.printStackTrace();
         }
-        client.close();
+
     }
     public void backward(){
         try {

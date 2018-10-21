@@ -1,7 +1,16 @@
 package ATMServer;
 
+import ATMServer.view.ServerGuiCtr;
 import com.accountType.Account;
 import com.exceptionType.RegisterException;
+import javafx.application.Application;
+import javafx.application.Platform;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -10,33 +19,90 @@ import java.util.Collection;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
-public class ATMServer {
+public class ATMServer extends Application{
+    private static Stage stage;
     public static Bank bank=Bank.getBank();
+    public static String clientInfo;
+    public static boolean flag;
+    public static ServerSocket server;
+    public static long connectTimes;
+    public static ListView<String> listView;
+    public static TextField textField;
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        stage=primaryStage;
+        initMainPanel();
+    }
 
     public static void main(String[] args) throws IOException {
-        //服务端在20006端口监听客户端请求的TCP连接
-        ServerSocket server = new ServerSocket(20006);
-        Socket client = null;
-        bank.readData();
-        //设置所有账户下线
-        Collection<Account> col=bank.getAccounts().values();
-        for(Account account:col){
-            account.setIsOnline(false);
-        }
-        bank.upDate();
+        launch(args);
 
-        System.out.println(bank.getAccounts().toString());
-        //通过调用Executors类的静态方法，创建一个ExecutorService实例
-        //ExecutorService接口是Executor接口的子接口
-        Executor service = Executors.newCachedThreadPool();
-        boolean flag = true;
-        while(flag){
-            //等待客户端的连接
-            client = server.accept();
-            System.out.println(client.toString()+"与客户端连接成功！");
-            service.execute(new ServerThread(client));
+    }
+    public static void work() {
+        Platform.runLater(()->textField.setText("运行中"));
+        try {
+            //服务端在20006端口监听客户端请求的TCP连接
+            server = new ServerSocket(20006);  //1
+            Socket client = null;
+            bank.readData();
+            //设置所有账户下线
+            Collection<Account> col=bank.getAccounts().values();
+            for(Account account:col){
+                account.setIsOnline(false);
+            }
+            bank.upDate();
+
+            System.out.println(bank.getAccounts().toString());
+            //通过调用Executors类的静态方法，创建一个ExecutorService实例
+            //ExecutorService接口是Executor接口的子接口
+            Executor service = Executors.newCachedThreadPool();
+            while(flag){
+                //等待客户端的连接
+                try{
+                    client = server.accept();   //运行到这里会线程阻塞  一直等待下一个客户端连接
+                }catch (IOException e){
+                    System.out.println("客户端连接失败");
+                }
+
+                if (flag){
+                    clientInfo=client.toString();
+                    connectTimes++;
+                    //子线程更新UI线程的操作
+                    Platform.runLater(()->listView.getItems().add(clientInfo));
+                    System.out.println(client.toString()+"与客户端连接成功！");
+                    service.execute(new ServerThread(client));
+                }else {
+                    try {
+                        client.close();
+                    }catch (IOException e2) {
+                        System.out.println("客户端断开连接失败");
+                    }
+                }
+
+            }
+            Platform.runLater(()->textField.setText("关闭"));
+            connectTimes=0;
+            server.close();
+        }catch (IOException e){
+            e.printStackTrace();
+            System.out.println("创建客户端失败");
         }
-        server.close();
+
+    }
+    public static void initMainPanel() throws Exception{
+        FXMLLoader loader=new FXMLLoader();
+        loader.setLocation(ATMServer.class.getResource("view/ServerGui.fxml"));
+        AnchorPane Panel=loader.load();
+        Scene scene=new Scene(Panel);
+        stage.setTitle("ATM终端");
+        stage.setScene(scene);
+        stage.resizableProperty().setValue(false);
+        stage.show();
+
+        ServerGuiCtr ctr=loader.getController();
+        listView=ctr.getClientInfo();
+        textField=ctr.getStatusTextField();
+        textField.setText("关闭");
     }
     public static boolean registration(String password,String name, String idnum,
                                        String email, String accountType) throws RegisterException{

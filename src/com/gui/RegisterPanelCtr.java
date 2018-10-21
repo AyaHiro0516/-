@@ -29,7 +29,7 @@ public class RegisterPanelCtr {
     @FXML
     private TextArea adressText;
     @FXML
-    private ChoiceBox selectBox;
+    private ChoiceBox<String> selectBox;
     @FXML
     private Text statusText;
 
@@ -38,15 +38,15 @@ public class RegisterPanelCtr {
     private ObjectInputStream ois=null;
     private ObjectOutputStream oos=null;
 
-    public ChoiceBox getSelectBox() {
+    public ChoiceBox<String> getSelectBox() {
         return selectBox;
     }
 
-    public void setSelectBox(ChoiceBox selectBox) {
+    public void setSelectBox(ChoiceBox<String> selectBox) {
         this.selectBox = selectBox;
     }
 
-    public void submition() throws IOException{
+    public void submition() {
         String accountType=(String) selectBox.getValue();
         String username=usernameText.getText();
         String password=passwordText.getText();
@@ -60,19 +60,20 @@ public class RegisterPanelCtr {
         }else if (!password.equals(repassword)){
             statusText.setText("密码不一致");
         }else {
-            client=new Socket("127.0.0.1",20006);
-            oos=new ObjectOutputStream(client.getOutputStream());
-            ois=new ObjectInputStream(client.getInputStream());
-
-            TransObject object=new TransObject("注册");
-            object.setFromAccountType(accountType);
-            object.setFromName(username);
-            object.setFromPassword(password);
-            object.setFromIdNum(idnum);
-            object.setFromEmail(email);
-            object.setFromAdress(adress);
-            oos.writeObject(object);
             try{
+                client=new Socket("127.0.0.1",20006);
+                oos=new ObjectOutputStream(client.getOutputStream());
+                ois=new ObjectInputStream(client.getInputStream());
+
+                TransObject object=new TransObject("注册");
+                object.setFromAccountType(accountType);
+                object.setFromName(username);
+                object.setFromPassword(password);
+                object.setFromIdNum(idnum);
+                object.setFromEmail(email);
+                object.setFromAdress(adress);
+                oos.writeObject(object);
+
                 TransObject getObject=(TransObject)ois.readObject();
                 if (!getObject.getFromName().equals("null")){  //表示添加成功
                     selectBox.getSelectionModel().selectFirst();
@@ -86,10 +87,15 @@ public class RegisterPanelCtr {
                 }else{
                     statusText.setText("账号已存在！");
                 }
-            }catch (ClassNotFoundException e){
+
+                client.close();
+            }catch (IOException e){
+                statusText.setText("连接服务器失败");
+            }
+            catch (ClassNotFoundException e){
                 e.printStackTrace();
             }
-            client.close();
+
         }
 
     }

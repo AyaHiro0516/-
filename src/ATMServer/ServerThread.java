@@ -41,7 +41,6 @@ public class ServerThread implements Runnable{
                         oos.writeObject(object);
 
                         ATMServer.bank.getAccounts().get(name).setIsOnline(true);
-                        ATMServer.bank.upDate();  //更新账户的登录状态
                     }else {
                         object.setFromName("false");
                         oos.writeObject(object);
@@ -72,7 +71,6 @@ public class ServerThread implements Runnable{
                     break;
                 case "下线":
                     ATMServer.bank.getAccounts().get(object.getFromName()).setIsOnline(false);
-                    ATMServer.bank.upDate();  //更新账户的登录状态
                     break;
             }
 
