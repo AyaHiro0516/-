@@ -15,12 +15,9 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-import java.io.File;
 
 public class MainApp extends Application {
     private static Stage stage;
-    public static File idFile=new File("F:/test/id.txt");
-    public static File dataFile=new File("F:/test/data.txt");;
 
     @Override
     public void start(Stage primaryStage) throws Exception{

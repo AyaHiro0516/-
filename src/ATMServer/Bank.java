@@ -1,20 +1,17 @@
 package ATMServer;
 
-import com.MainApp;
 import com.accountType.*;
 import com.exceptionType.ATMException;
 import com.exceptionType.AccountNotFoundException;
 import com.exceptionType.LoginException;
 import com.exceptionType.RegisterException;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.io.*;
 import java.util.Collection;
 import java.util.TreeMap;
 
 public class Bank{
+    public static File dataFile=new File("F:/test/data.txt");
     private static Bank bank;
     private Bank(){
         this.accounts=new TreeMap<>();
@@ -45,7 +42,7 @@ public class Bank{
         FileOutputStream fos=null;
         ObjectOutputStream oos=null;
         try{
-            fos=new FileOutputStream(MainApp.dataFile.toString());
+            fos=new FileOutputStream(dataFile.toString());
             oos=new ObjectOutputStream(fos);
             oos.writeObject(this.accounts);
             this.accountsNum=this.accounts.size();
@@ -65,7 +62,7 @@ public class Bank{
         FileInputStream fis=null;
         ObjectInputStream ois=null;
         try{
-            fis=new FileInputStream(MainApp.dataFile.toString());
+            fis=new FileInputStream(dataFile.toString());
             ois=new ObjectInputStream(fis);
             this.accounts=(TreeMap<String,Account>) ois.readObject();
             this.accountsNum=this.accounts.size();
