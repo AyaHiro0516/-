@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ATMClient.gui.LoginPanelCtr">
+   <children>
+      <Text layoutX="116.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="用户账号：">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+      <Text layoutX="116.0" layoutY="208.0" strokeType="OUTSIDE" strokeWidth="0.0" text="用户密码：">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+      <TextField fx:id="usernameText" layoutX="245.0" layoutY="116.0" />
+      <PasswordField fx:id="passwordText" layoutX="245.0" layoutY="185.0" />
+      <Button fx:id="Btn_submit" layoutX="171.0" layoutY="263.0" mnemonicParsing="false" onAction="#submition" prefHeight="50.0" prefWidth="110.0" text="确认" textFill="#01eb30">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Button>
+      <Button fx:id="Btn_backward" layoutX="312.0" layoutY="263.0" mnemonicParsing="false" onAction="#backward" prefHeight="50.0" prefWidth="110.0" text="取消" textFill="#2b08f2">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Button>
+      <Text fx:id="statusText" fill="#eb0000" layoutX="245.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="343.3603515625">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

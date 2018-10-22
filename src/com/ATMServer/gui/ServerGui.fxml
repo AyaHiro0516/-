@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ATMServer.gui.ServerGuiCtr">
+   <children>
+      <Text layoutX="237.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ATM服务端">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Text>
+      <ListView fx:id="clientInfo" layoutX="30.0" layoutY="120.0" prefHeight="166.0" prefWidth="398.0" />
+      <Text fill="#f800c7" layoutX="28.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0" text="运行状态：" wrappingWidth="114.0">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+      <TextField fx:id="statusTextField" layoutX="133.0" layoutY="317.0" prefHeight="30.0" prefWidth="69.0" />
+      <Text fill="#f800c2" layoutX="28.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="客户端连接记录：" wrappingWidth="165.30029296875">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Text>
+      <Button fx:id="Btn_exit" layoutX="495.0" layoutY="346.0" mnemonicParsing="false" onAction="#exitApp" prefHeight="30.0" prefWidth="81.0" text="退出" textFill="RED" />
+      <ToggleButton fx:id="Btn_start" layoutX="447.0" layoutY="120.0" mnemonicParsing="false" onAction="#start" prefHeight="56.0" prefWidth="129.0" text="开启服务器" textFill="#00d335">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </ToggleButton>
+      <ToggleButton fx:id="Btn_end" layoutX="447.0" layoutY="230.0" mnemonicParsing="false" onAction="#end" prefHeight="56.0" prefWidth="129.0" text="关闭服务器" textFill="#4800e4">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </ToggleButton>
+   </children>
+</AnchorPane>

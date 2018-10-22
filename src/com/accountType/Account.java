@@ -51,6 +51,8 @@ abstract public class Account implements Serializable {
             this.personId = personId;
             this.email = email;
             this.balance = balance;
+            this.adress="null";
+            this.isOnline=false;
         }catch (Exception e) {
             e.printStackTrace();
         }
