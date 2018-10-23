@@ -41,7 +41,6 @@ public class ServerThread implements Runnable{
                         object.setStatus("true");
                         oos.writeObject(object);
                         ServerStart.bank.getAccounts().get(object.getFromName()).setIsOnline(true);
-                        ServerStart.bank.upDate();
                     }else {
                         object.setStatus("false");
                         oos.writeObject(object);
@@ -88,8 +87,8 @@ public class ServerThread implements Runnable{
                     break;
                 case "下线":
                     ServerStart.bank.getAccounts().get(object.getFromName()).setIsOnline(false);
+                    object.setAccount(ServerStart.bank.getAccounts().get(object.getFromName()));
                     oos.writeObject(object);
-                    ServerStart.bank.upDate();
                     break;
             }
 

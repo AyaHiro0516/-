@@ -1,7 +1,5 @@
 package com.accountType;
 
-import com.accountType.Account;
-
 import java.io.Serializable;
 
 public class TransObject implements Serializable{  //打包类

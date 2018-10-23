@@ -121,7 +121,7 @@ public class BusinessPanelCtr {
 
     public void submition() {
         String username=usernameText.getText();
-        String mode=(String) selectBox.getValue();
+        String mode=selectBox.getValue();
         try {
             Double amount=new Double(amountTextField.getText());
             if (amount<0){
@@ -187,10 +187,12 @@ public class BusinessPanelCtr {
         try{
             client=new Socket("127.0.0.1",20003);  //客户端连接
             oos=new ObjectOutputStream(client.getOutputStream());
+            ois=new ObjectInputStream(client.getInputStream());
             TransObject object=new TransObject("下线");
             object.setFromName(usernameText.getText());
             oos.writeObject(object);
 
+            TransObject getObject=(TransObject)ois.readObject();
             client.close();
             ClientStart.initMainPanel();
         }catch (IOException e){

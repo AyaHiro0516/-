@@ -140,7 +140,7 @@ public class Bank{
                 acTo.setBalance(acTo.getBalance()+amount);
                 return true;
             }else {
-                return false;
+                throw new BalanceNotEnoughException("转账者余额不足。");
             }
         }else if(!accounts.containsKey(from)){
             throw new AccountNotFoundException("无转出账户信息。");
