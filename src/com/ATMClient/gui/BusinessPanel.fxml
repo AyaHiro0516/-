@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ATMClient.gui.BusinessPanelCtr">
+   <children>
+      <Text layoutX="173.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="账    户:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="173.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="姓    名:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="173.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="余    额:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="165.0" layoutY="213.0" strokeType="OUTSIDE" strokeWidth="0.0" text="信用额度:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="169.0" layoutY="262.0" strokeType="OUTSIDE" strokeWidth="0.0" text="贷 款 额:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text fx:id="idText" fill="#ff4000" layoutX="356.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="null" wrappingWidth="98.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text fx:id="usernameText" fill="#cb08fc" layoutX="356.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="null" wrappingWidth="98.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text fx:id="ceilingText" fill="#1eeb0b" layoutX="356.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="98.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text fx:id="loanText" fill="#fc0505" layoutX="356.0" layoutY="262.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="98.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text fx:id="balanceText" fill="#3300ff" layoutX="356.0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="98.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <ChoiceBox fx:id="selectBox" layoutX="165.0" layoutY="293.0" prefHeight="30.0" prefWidth="126.0" />
+      <TextField fx:id="amountTextField" layoutX="290.0" layoutY="293.0" prefHeight="30.0" prefWidth="132.0" promptText="请输入数额" />
+      <Button fx:id="Btn_submit" layoutX="165.0" layoutY="343.0" mnemonicParsing="false" onAction="#submition" prefHeight="24.0" prefWidth="114.0" text="提交" textFill="#2a01f8" />
+      <Button fx:id="Btn_backward" layoutX="308.0" layoutY="343.0" mnemonicParsing="false" onAction="#backward" prefHeight="24.0" prefWidth="114.0" text="返回" textFill="#ff0101" />
+      <Text fx:id="statusText" fill="#ff0daa" layoutX="437.0" layoutY="316.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="132.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <TextField fx:id="transnameTextField" layoutX="447.0" layoutY="174.0" prefHeight="30.0" prefWidth="126.0" promptText="请输入姓名" />
+      <Text fx:id="transnameText" layoutX="447.0" layoutY="154.0" strokeType="OUTSIDE" strokeWidth="0.0" text="接收账户:" wrappingWidth="76.3330078125">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

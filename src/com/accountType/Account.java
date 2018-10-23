@@ -1,6 +1,5 @@
 package com.accountType;
 
-import com.MainApp;
 import com.exceptionType.ATMException;
 
 import java.io.*;
@@ -15,16 +14,17 @@ abstract public class Account implements Serializable {
     private String adress;
     private String accountType;
     private double balance;
+    private boolean isOnline;
 
-
+    public static File idFile=new File("F:/test/id.txt");
 
     public static long returnId() throws Exception{
-        Scanner fin=new Scanner(MainApp.idFile);
+        Scanner fin=new Scanner(idFile);
         long id=fin.nextLong();
         Writer w=null;
         BufferedWriter bw=null;
         try {
-            w=new FileWriter(MainApp.idFile.toString());
+            w=new FileWriter(idFile.toString());
             bw=new BufferedWriter(w);
             bw.write(id+1+"");
             bw.flush();
@@ -51,6 +51,8 @@ abstract public class Account implements Serializable {
             this.personId = personId;
             this.email = email;
             this.balance = balance;
+            this.adress="null";
+            this.isOnline=false;
         }catch (Exception e) {
             e.printStackTrace();
         }
@@ -119,6 +121,14 @@ abstract public class Account implements Serializable {
         Account updateAC=this;
         updateAC.accountType=accountType;
         return updateAC;
+    }
+
+    public boolean getIsOnline() {
+        return isOnline;
+    }
+
+    public void setIsOnline(boolean online) {
+        isOnline = online;
     }
 
     final public Account deposit(double amount){
