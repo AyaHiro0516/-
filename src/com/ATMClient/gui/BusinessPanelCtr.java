@@ -129,7 +129,7 @@ public class BusinessPanelCtr {
                 statusText.setText("输入有误！");
                 return;
             }
-            client=new Socket("127.0.0.1",20003);  //客户端连接
+            client=new Socket("192.168.43.79",8888);  //客户端连接
             oos=new ObjectOutputStream(client.getOutputStream());
             ois=new ObjectInputStream(client.getInputStream());
 
@@ -185,7 +185,7 @@ public class BusinessPanelCtr {
 
     public void backward(){
         try{
-            client=new Socket("127.0.0.1",20003);  //客户端连接
+            client=new Socket("192.168.43.79",8888);  //客户端连接
             oos=new ObjectOutputStream(client.getOutputStream());
             ois=new ObjectInputStream(client.getInputStream());
             TransObject object=new TransObject("下线");

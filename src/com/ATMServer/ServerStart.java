@@ -44,7 +44,7 @@ public class ServerStart extends Application{
         Platform.runLater(()->textField.setText("运行中"));
         try {
             //服务端在20006端口监听客户端请求的TCP连接
-            server = new ServerSocket(20003);  //1
+            server = new ServerSocket(8888);  //1
             Socket client = null;
             bank.readData();
             //设置所有账户下线

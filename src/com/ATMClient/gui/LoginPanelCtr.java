@@ -43,7 +43,7 @@ public class LoginPanelCtr {
             return;
         }
         try {
-            client=new Socket("127.0.0.1",20003);  //客户端连接
+            client=new Socket("192.168.43.79",8888);  //客户端连接
             oos=new ObjectOutputStream(client.getOutputStream());
             ois=new ObjectInputStream(client.getInputStream());
 

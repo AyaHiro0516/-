@@ -61,7 +61,7 @@ public class RegisterPanelCtr {
             statusText.setText("密码不一致");
         }else {
             try{
-                client=new Socket("127.0.0.1",20003);
+                client=new Socket("192.168.43.79",8888);
                 oos=new ObjectOutputStream(client.getOutputStream());
                 ois=new ObjectInputStream(client.getInputStream());
 
