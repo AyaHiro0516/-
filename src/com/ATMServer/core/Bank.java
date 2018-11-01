@@ -25,7 +25,7 @@ public class Bank{
         }
         return bank;
     }
-    private TreeMap<String,Account> accounts;
+    private TreeMap<String,Account> accounts; //DAO
     private int accountsNum;
 
     public TreeMap<String, Account> getAccounts() {
@@ -36,7 +36,7 @@ public class Bank{
         return accountsNum;
     }
 
-    public void upDate(){
+    public void upDate(){   //DAO
         FileOutputStream fos=null;
         ObjectOutputStream oos=null;
         try{
@@ -56,7 +56,7 @@ public class Bank{
         }
     }
 
-    public void readData(){
+    public void readData(){  //DAO
         FileInputStream fis=null;
         ObjectInputStream ois=null;
         try{
@@ -94,7 +94,7 @@ public class Bank{
         }
     }
 
-    public Account login(String name, String password) throws ATMException{
+    public Account login(String name, String password) throws ATMException{  //DAO
         if (accounts.containsKey(name)){
             if (accounts.get(name).getPassword().equals(password)){
                 return accounts.get(name);
@@ -103,20 +103,20 @@ public class Bank{
         else throw new AccountNotFoundException("无该账户信息，登录失败。");
     }
 
-    public Account deposit(String name, double amount) throws ATMException{
+    public Account deposit(String name, double amount) throws ATMException{  //DAO
         if (accounts.containsKey(name)){
             return accounts.get(name).deposit(amount);
         }
         else throw new AccountNotFoundException("无该账户信息，存款失败。");
     }
 
-    public Account withdraw(String name, double amount) throws ATMException{
+    public Account withdraw(String name, double amount) throws ATMException{  //DAO
         if (accounts.containsKey(name)){
             return accounts.get(name).withdraw(amount);
         }
         throw new AccountNotFoundException("无该账户信息，取款失败。");
     }
-    public Account setCeiling(String name, double newceiling) throws ATMException{
+    public Account setCeiling(String name, double newceiling) throws ATMException{  //DAO
         if (accounts.containsKey(name)){
             if (accounts.get(name) instanceof CreditAccount){
                 ((CreditAccount) accounts.get(name)).setCeiling(newceiling);
@@ -131,7 +131,7 @@ public class Bank{
         else throw new AccountNotFoundException("无该账户信息，设置失败。");
     }
 
-    public boolean transfer(String from, String to, double amount) throws ATMException{
+    public boolean transfer(String from, String to, double amount) throws ATMException{  //DAO
         if (accounts.containsKey(from) && accounts.containsKey(to)){
             Account acFrom=accounts.get(from);
             Account acTo=accounts.get(to);
@@ -149,7 +149,7 @@ public class Bank{
         }
     }
 
-    public Account requestLoan(String name, double amount) throws ATMException{
+    public Account requestLoan(String name, double amount) throws ATMException{  //DAO
         if (accounts.containsKey(name)){
             if (accounts.get(name) instanceof LoanCreditAccount){
                 ((LoanCreditAccount) accounts.get(name)).requestLoan(amount);
@@ -164,7 +164,7 @@ public class Bank{
         else throw new AccountNotFoundException("无该账户信息，贷款失败。");
     }
 
-    public Account payLoan(String name, double amount) throws ATMException{
+    public Account payLoan(String name, double amount) throws ATMException{  //DAO
         if (accounts.containsKey(name)){
             if (accounts.get(name) instanceof LoanCreditAccount){
                 ((LoanCreditAccount) accounts.get(name)).payLoan(amount);

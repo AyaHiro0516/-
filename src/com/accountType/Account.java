@@ -18,7 +18,7 @@ abstract public class Account implements Serializable {
 
     public static File idFile=new File("F:/test/id.txt");
 
-    public static long returnId() throws Exception{
+    public static long returnId() throws Exception{ //DAO
         Scanner fin=new Scanner(idFile);
         long id=fin.nextLong();
         Writer w=null;
