@@ -75,7 +75,7 @@ public class RegisterPanelCtr {
                 oos.writeObject(object);
 
                 TransObject getObject=(TransObject)ois.readObject();
-                if (!getObject.getStatus().equals("no")){  //表示添加成功
+                if (!getObject.getStatus().equals("null")){  //表示添加成功
                     selectBox.getSelectionModel().selectFirst();
                     usernameText.clear();
                     passwordText.clear();

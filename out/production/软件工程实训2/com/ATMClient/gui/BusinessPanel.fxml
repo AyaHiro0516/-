@@ -13,7 +13,7 @@
             <Font size="18.0" />
          </font>
       </Text>
-      <Text layoutX="173.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="姓    名:">
+      <Text layoutX="169.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="用 户 名:">
          <font>
             <Font size="18.0" />
          </font>

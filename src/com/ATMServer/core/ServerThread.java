@@ -29,6 +29,8 @@ public class ServerThread implements Runnable{
                     if(!ServerStart.registration(object.getFromPassword(),object.getFromName(),object.getFromIdNum(),
                             object.getFromEmail(),object.getFromAccountType())){
                         object.setStatus("null");
+                    }else {
+                        object.setStatus("true");
                     }
                     oos.writeObject(object);
                     break;

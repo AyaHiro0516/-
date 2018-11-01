@@ -72,6 +72,7 @@ public class ServerStart extends Application{
                     //子线程更新UI线程的操作
                     Platform.runLater(()->listView.getItems().add(clientInfo));
                     System.out.println(client.toString()+"与客户端连接成功！");
+                    System.out.println(bank.getAccounts().toString());
                     service.execute(new ServerThread(client));
                 }else {
                     try {
@@ -109,10 +110,10 @@ public class ServerStart extends Application{
     }
     public static boolean registration(String password,String name, String idnum,
                                        String email, String accountType) throws RegisterException{
-        if (bank.getAccounts().containsKey(name) && bank.getAccounts().get(name).getPersonId().equals(idnum)){
+        if (bank.getAccounts().containsKey(name)){
             return false;
         }else {
-              bank.getAccounts().put(name,bank.register(password,name,idnum,email,accountType));
+            bank.getAccounts().put(name,bank.register(password,name,idnum,email,accountType));
             bank.upDate();
             return true;
         }
