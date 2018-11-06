@@ -1,5 +1,9 @@
 package com.accountType;
 
+import com.dao.AccountDAO;
+import com.dao.AccountDAOFileImpl;
+import com.dao.AccountDAOJDBCImpl;
+import com.dao.DaoFactory;
 import com.exceptionType.ATMException;
 
 import java.io.*;
@@ -15,30 +19,16 @@ abstract public class Account implements Serializable {
     private String accountType;
     private double balance;
     private boolean isOnline;
+    private static AccountDAO dao= DaoFactory.getAccountDAO("JDBCImpl");
 
-    public static File idFile=new File("F:/test/id.txt");
-
-    public static long returnId() throws Exception{ //DAO
-        Scanner fin=new Scanner(idFile);
-        long id=fin.nextLong();
-        Writer w=null;
-        BufferedWriter bw=null;
-        try {
-            w=new FileWriter(idFile.toString());
-            bw=new BufferedWriter(w);
-            bw.write(id+1+"");
-            bw.flush();
-        }catch (Exception e){
-            e.printStackTrace();
-        }finally {
-            try {
-                bw.close();
-                w.close();
-            } catch (IOException E) {
-                E.printStackTrace();
-            }
+    private static long returnId() {
+        if (dao instanceof AccountDAOFileImpl){
+            return dao.returnId();
         }
-        return id;
+        if (dao instanceof AccountDAOJDBCImpl){
+            return dao.returnId();
+        }
+        return 0;
     }
     public Account() {
     }

@@ -1,6 +1,10 @@
 package com.ATMServer.core;
 
 import com.accountType.*;
+import com.dao.AccountDAO;
+import com.dao.AccountDAOFileImpl;
+import com.dao.AccountDAOJDBCImpl;
+import com.dao.DaoFactory;
 import com.exceptionType.*;
 
 
@@ -9,7 +13,6 @@ import java.util.Collection;
 import java.util.TreeMap;
 
 public class Bank{
-    public static File dataFile=new File("F:/test/data.txt");
     private static Bank bank;
     private Bank(){
         this.accounts=new TreeMap<>();
@@ -25,6 +28,7 @@ public class Bank{
         }
         return bank;
     }
+    private static AccountDAO dao= DaoFactory.getAccountDAO("JDBCImpl");
     private TreeMap<String,Account> accounts; //DAO
     private int accountsNum;
 
@@ -32,47 +36,33 @@ public class Bank{
         return accounts;
     }
 
+    public void setAccounts(TreeMap<String, Account> accounts) {
+        this.accounts = accounts;
+    }
+
     public int getAccountsNum() {
         return accountsNum;
     }
 
+    public void setAccountsNum(int accountsNum) {
+        this.accountsNum = accountsNum;
+    }
+
     public void upDate(){   //DAO
-        FileOutputStream fos=null;
-        ObjectOutputStream oos=null;
-        try{
-            fos=new FileOutputStream(dataFile.toString());
-            oos=new ObjectOutputStream(fos);
-            oos.writeObject(this.accounts);
-            this.accountsNum=this.accounts.size();
-        }catch (Exception e){
-            e.printStackTrace();
-        }finally {
-            try{
-                oos.close();
-                fos.close();
-            }catch (Exception e){
-                e.printStackTrace();
-            }
+        if (dao instanceof AccountDAOFileImpl){
+            ((AccountDAOFileImpl) dao).upDate();
+        }
+        if (dao instanceof AccountDAOJDBCImpl){
+
         }
     }
 
-    public void readData(){  //DAO
-        FileInputStream fis=null;
-        ObjectInputStream ois=null;
-        try{
-            fis=new FileInputStream(dataFile.toString());
-            ois=new ObjectInputStream(fis);
-            this.accounts=(TreeMap<String,Account>) ois.readObject();
-            this.accountsNum=this.accounts.size();
-        }catch (Exception e){
-            e.printStackTrace();
-        }finally {
-            try{
-                ois.close();
-                fis.close();
-            }catch (Exception e){
-                e.printStackTrace();
-            }
+    public void readData(){
+        if (dao instanceof AccountDAOFileImpl){
+            dao.getAllAccount();
+        }
+        if (dao instanceof AccountDAOJDBCImpl){
+            dao.getAllAccount();
         }
     }
 
