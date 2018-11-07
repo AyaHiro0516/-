@@ -2,13 +2,10 @@ package com.ATMServer.core;
 
 import com.accountType.*;
 import com.dao.AccountDAO;
-import com.dao.AccountDAOFileImpl;
-import com.dao.AccountDAOJDBCImpl;
 import com.dao.DaoFactory;
 import com.exceptionType.*;
 
 
-import java.io.*;
 import java.util.Collection;
 import java.util.TreeMap;
 
@@ -48,38 +45,40 @@ public class Bank{
         this.accountsNum = accountsNum;
     }
 
-    public void upDate(){   //DAO
-        if (dao instanceof AccountDAOFileImpl){
-            ((AccountDAOFileImpl) dao).upDate();
-        }
-        if (dao instanceof AccountDAOJDBCImpl){
+    public void addAccount(long userId, String password, String name, String personId, String email, String adress, String acType){
+        dao.addAccount(userId,password,name,personId,email,adress,acType);
+    }
 
-        }
+    public void upDateBalance(String name, double amount){
+        dao.upDateBalance(name,amount);
+    }
+
+    public void upDateCeiling(String name, double amount){
+        dao.upDateCeiling(name,amount);
+    }
+
+    public void upDateLoan(String name, double amount){
+        dao.upDateLoan(name,amount);
     }
 
     public void readData(){
-        if (dao instanceof AccountDAOFileImpl){
-            dao.getAllAccount();
-        }
-        if (dao instanceof AccountDAOJDBCImpl){
-            dao.getAllAccount();
-        }
+        dao.getAllAccount();
     }
 
-    public Account register(String password, String name, String personId, String email, String acType) throws RegisterException{
+    public Account register(String password, String name, String personId, String email, String adress,String acType) throws RegisterException{
         switch (acType){
             case "SavingAccount":
                 accountsNum++;
-                return new SavingAccount(password, name, personId, email, 0).setAccountType("SavingAccount");
+                return new SavingAccount(password, name, personId, email, adress, 0).setAccountType("SavingAccount");
             case "CreditAccount":
                 accountsNum++;
-                return new CreditAccount(password, name, personId, email, 0).setAccountType("CreditAccount");
+                return new CreditAccount(password, name, personId, email, adress, 0).setAccountType("CreditAccount");
             case "LoanSavingAccount":
                 accountsNum++;
-                return new LoanSavingAccount(password, name, personId, email, 0).setAccountType("LoanSavingAccount");
+                return new LoanSavingAccount(password, name, personId, email, adress, 0).setAccountType("LoanSavingAccount");
             case "LoanCreditAccount":
                 accountsNum++;
-                return new LoanCreditAccount(password, name, personId, email, 0).setAccountType("LoanCreditAccount");
+                return new LoanCreditAccount(password, name, personId, email, adress, 0).setAccountType("LoanCreditAccount");
             default: throw new RegisterException("开户失败，未知账户类型。");
         }
     }

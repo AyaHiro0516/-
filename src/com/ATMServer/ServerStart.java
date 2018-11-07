@@ -52,7 +52,6 @@ public class ServerStart extends Application{
             for(Account account:col){
                 account.setIsOnline(false);
             }
-            bank.upDate();
 
             System.out.println(bank.getAccounts().toString());
             //通过调用Executors类的静态方法，创建一个ExecutorService实例
@@ -109,12 +108,12 @@ public class ServerStart extends Application{
         textField.setText("关闭");
     }
     public static boolean registration(String password,String name, String idnum,
-                                       String email, String accountType) throws RegisterException{
+                                       String email, String adress, String accountType) throws RegisterException{
         if (bank.getAccounts().containsKey(name)){
             return false;
         }else {
-            bank.getAccounts().put(name,bank.register(password,name,idnum,email,accountType));
-            bank.upDate();
+            bank.getAccounts().put(name,bank.register(password,name,idnum,email,adress,accountType));
+            bank.addAccount(bank.getAccounts().get(name).getId(),password,name,idnum,email,adress,accountType);
             return true;
         }
     }

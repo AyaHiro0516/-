@@ -1,7 +1,6 @@
 package com.dao;
 
 import com.ATMServer.ServerStart;
-import com.ATMServer.core.Bank;
 import com.accountType.Account;
 
 import java.io.*;
@@ -75,5 +74,25 @@ public class AccountDAOFileImpl implements AccountDAO{
                 e.printStackTrace();
             }
         }
+    }
+
+    @Override
+    public void addAccount(long userId, String password, String name, String personId, String email, String adress, String acType) {
+        upDate();
+    }
+
+    @Override
+    public void upDateBalance(String name, double amount) {
+        upDate();
+    }
+
+    @Override
+    public void upDateCeiling(String name, double amount) {
+        upDate();
+    }
+
+    @Override
+    public void upDateLoan(String name, double amount) {
+        upDate();
     }
 }

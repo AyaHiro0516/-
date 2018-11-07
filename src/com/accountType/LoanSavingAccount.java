@@ -18,8 +18,8 @@ public class LoanSavingAccount extends SavingAccount implements Loanable{
         super();
     }
 
-    public LoanSavingAccount(String password, String name, String personId, String email, double balance) {
-        super(password, name, personId, email, balance);
+    public LoanSavingAccount(String password, String name, String personId, String email, String adress, double balance) {
+        super(password, name, personId, email, adress, balance);
     }
 
     @Override

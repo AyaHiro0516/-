@@ -1,13 +1,10 @@
 package com.accountType;
 
 import com.dao.AccountDAO;
-import com.dao.AccountDAOFileImpl;
-import com.dao.AccountDAOJDBCImpl;
 import com.dao.DaoFactory;
 import com.exceptionType.ATMException;
 
 import java.io.*;
-import java.util.Scanner;
 
 abstract public class Account implements Serializable {
     private long id;
@@ -19,21 +16,15 @@ abstract public class Account implements Serializable {
     private String accountType;
     private double balance;
     private boolean isOnline;
-    private static AccountDAO dao= DaoFactory.getAccountDAO("JDBCImpl");
+    private static AccountDAO dao=DaoFactory.getAccountDAO("JDBCImpl");
 
     private static long returnId() {
-        if (dao instanceof AccountDAOFileImpl){
-            return dao.returnId();
-        }
-        if (dao instanceof AccountDAOJDBCImpl){
-            return dao.returnId();
-        }
-        return 0;
+        return dao.returnId();
     }
     public Account() {
     }
 
-    public Account(String password, String name, String personId, String email, double balance) {
+    public Account(String password, String name, String personId, String email, String adress, double balance) {
         try{
             this.id = returnId();
             this.password = password;
@@ -41,7 +32,7 @@ abstract public class Account implements Serializable {
             this.personId = personId;
             this.email = email;
             this.balance = balance;
-            this.adress="null";
+            this.adress= adress;
             this.isOnline=false;
         }catch (Exception e) {
             e.printStackTrace();

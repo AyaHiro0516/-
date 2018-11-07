@@ -7,8 +7,8 @@ public class SavingAccount extends Account{
     public SavingAccount(){
         super();
     }
-    public SavingAccount(String password, String name, String personId, String email, double balance){
-        super(password, name, personId, email, balance);
+    public SavingAccount(String password, String name, String personId, String email, String adress, double balance){
+        super(password, name, personId, email, adress, balance);
     }
 
     @Override

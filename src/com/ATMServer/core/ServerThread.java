@@ -27,7 +27,7 @@ public class ServerThread implements Runnable{
             switch (requestType){
                 case "注册":
                     if(!ServerStart.registration(object.getFromPassword(),object.getFromName(),object.getFromIdNum(),
-                            object.getFromEmail(),object.getFromAccountType())){
+                            object.getFromEmail(), object.getFromAdress(),object.getFromAccountType())){
                         object.setStatus("null");
                     }else {
                         object.setStatus("true");
@@ -54,10 +54,12 @@ public class ServerThread implements Runnable{
                         switch (mode){
                             case "存款":
                                 ServerStart.bank.deposit(object.getFromName(),new Double(object.getAmount()));
+                                ServerStart.bank.upDateBalance(object.getFromName(),new Double(object.getAmount()));
                                 object.setStatus("true");
                                 break;
                             case "取款":
                                 ServerStart.bank.withdraw(object.getFromName(),new Double(object.getAmount()));
+                                ServerStart.bank.upDateBalance(object.getFromName(),new Double("-"+object.getAmount()));
                                 object.setStatus("true");
                                 break;
                             case "转账":
@@ -66,19 +68,24 @@ public class ServerThread implements Runnable{
                                     object.setStatus("null");
                                 } else {
                                     ServerStart.bank.transfer(object.getFromName(),object.getToName(),new Double(object.getAmount()));
+                                    ServerStart.bank.upDateBalance(object.getFromName(),new Double("-"+object.getAmount()));
+                                    ServerStart.bank.upDateBalance(object.getToName(),new Double(object.getAmount()));
                                     object.setStatus("true");
                                 }
                                 break;
                             case "借贷":
                                 ServerStart.bank.requestLoan(object.getFromName(),new Double(object.getAmount()));
+                                ServerStart.bank.upDateBalance(object.getFromName(),new Double(object.getAmount()));
+                                ServerStart.bank.upDateLoan(object.getFromName(),new Double(object.getAmount()));
                                 object.setStatus("true");
                                 break;
                             case "还贷":
                                 ServerStart.bank.payLoan(object.getFromName(),new Double(object.getAmount()));
+                                ServerStart.bank.upDateBalance(object.getFromName(),new Double("-"+object.getAmount()));
+                                ServerStart.bank.upDateLoan(object.getFromName(),new Double("-"+object.getAmount()));
                                 object.setStatus("true");
                                 break;
                         }
-                        ServerStart.bank.upDate();
                         object.setAccount(ServerStart.bank.getAccounts().get(object.getFromName()));
                         object.setFromAccountType(ServerStart.bank.getAccounts().get(object.getFromName()).getAccountType());
                     }catch (ATMException atmE){
