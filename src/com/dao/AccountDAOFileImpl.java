@@ -2,15 +2,30 @@ package com.dao;
 
 import com.ATMServer.ServerStart;
 import com.accountType.Account;
+import org.dom4j.Document;
+import org.dom4j.Element;
+import org.dom4j.io.SAXReader;
 
 import java.io.*;
 import java.util.Scanner;
 import java.util.TreeMap;
 
 public class AccountDAOFileImpl implements AccountDAO{
-    public final File idFile=new File("F:/test/id.txt");
-    public final File dataFile=new File("F:/test/data.txt");
+    private static File idFile = null;
+    private static File dataFile = null;
 
+    static { //加载配置文件
+        try{
+            SAXReader reader=new SAXReader();
+            Document doc=reader.read(new File("config/ATMSystem.xml"));
+            Element root=doc.getRootElement();
+            Element elem=root.element("DAOFile");
+            idFile=new File(elem.elementText("idFile"));
+            dataFile=new File(elem.elementText("dataFile"));
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
     @Override
     public long returnId() {
         long id=0;

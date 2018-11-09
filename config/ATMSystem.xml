@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<properties>
+    <DAOType>XMLImpl</DAOType>
+
+    <DAOFile>
+        <idFile>F:/test/id.txt</idFile>
+        <dataFile>F:/test/data.txt</dataFile>
+    </DAOFile>
+
+    <DAOJDBC>
+        <DB_URL>jdbc:mysql://localhost:3306/setraining?useSSL=false</DB_URL>
+        <driver>com.mysql.jdbc.Driver</driver>
+        <USER>root</USER>
+        <PASS>bxy0516</PASS>
+    </DAOJDBC>
+
+    <Socket>
+        <host>192.168.43.79</host>
+        <port>8888</port>
+    </Socket>
+</properties>

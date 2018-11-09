@@ -2,6 +2,7 @@ package com.ATMClient.gui;
 
 import com.accountType.TransObject;
 import com.ATMClient.ClientStart;
+import com.dao.DaoFactory;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.text.Text;
@@ -37,6 +38,8 @@ public class RegisterPanelCtr {
     public Socket client=null;
     private ObjectInputStream ois=null;
     private ObjectOutputStream oos=null;
+    private String host= DaoFactory.getHost();
+    private String port= DaoFactory.getPort();
 
     public ChoiceBox<String> getSelectBox() {
         return selectBox;
@@ -61,7 +64,7 @@ public class RegisterPanelCtr {
             statusText.setText("密码不一致");
         }else {
             try{
-                client=new Socket("192.168.43.79",8888);
+                client=new Socket(host,Integer.parseInt(port));
                 oos=new ObjectOutputStream(client.getOutputStream());
                 ois=new ObjectInputStream(client.getInputStream());
 

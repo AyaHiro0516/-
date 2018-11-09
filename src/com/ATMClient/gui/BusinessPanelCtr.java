@@ -5,6 +5,7 @@ import com.ATMClient.ClientStart;
 import com.accountType.CreditAccount;
 import com.accountType.LoanCreditAccount;
 import com.accountType.LoanSavingAccount;
+import com.dao.DaoFactory;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
@@ -46,6 +47,8 @@ public class BusinessPanelCtr {
     private Socket client=null;
     private ObjectInputStream ois=null;
     private ObjectOutputStream oos=null;
+    private String host= DaoFactory.getHost();
+    private String port= DaoFactory.getPort();
 
     public Text getIdText() {
         return idText;
@@ -129,7 +132,7 @@ public class BusinessPanelCtr {
                 statusText.setText("输入有误！");
                 return;
             }
-            client=new Socket("192.168.43.79",8888);  //客户端连接
+            client=new Socket(host,Integer.parseInt(port));  //客户端连接
             oos=new ObjectOutputStream(client.getOutputStream());
             ois=new ObjectInputStream(client.getInputStream());
 
@@ -185,7 +188,7 @@ public class BusinessPanelCtr {
 
     public void backward(){
         try{
-            client=new Socket("192.168.43.79",8888);  //客户端连接
+            client=new Socket(host,Integer.parseInt(port));  //客户端连接
             oos=new ObjectOutputStream(client.getOutputStream());
             ois=new ObjectInputStream(client.getInputStream());
             TransObject object=new TransObject("下线");

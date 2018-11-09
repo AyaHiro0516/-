@@ -4,6 +4,7 @@ import com.ATMServer.core.Bank;
 import com.ATMServer.core.ServerThread;
 import com.ATMServer.gui.ServerGuiCtr;
 import com.accountType.Account;
+import com.dao.DaoFactory;
 import com.exceptionType.RegisterException;
 import javafx.application.Application;
 import javafx.application.Platform;
@@ -23,7 +24,7 @@ import java.util.concurrent.Executors;
 
 public class ServerStart extends Application{
     private static Stage stage;
-    public static Bank bank=Bank.getBank();
+    public static Bank bank;
     public static String clientInfo;
     public static boolean flag;
     public static ServerSocket server;
@@ -37,14 +38,14 @@ public class ServerStart extends Application{
     }
 
     public static void main(String[] args) throws IOException {
+        bank=Bank.getBank();
         launch(args);
-
     }
     public static void work() {
         Platform.runLater(()->textField.setText("运行中"));
         try {
             //服务端在20006端口监听客户端请求的TCP连接
-            server = new ServerSocket(8888);  //1
+            server = new ServerSocket(Integer.parseInt(DaoFactory.getPort()));  //1
             Socket client = null;
             bank.readData();
             //设置所有账户下线

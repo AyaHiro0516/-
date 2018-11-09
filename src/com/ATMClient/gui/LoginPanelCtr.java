@@ -2,6 +2,7 @@ package com.ATMClient.gui;
 
 import com.accountType.TransObject;
 import com.ATMClient.ClientStart;
+import com.dao.DaoFactory;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -30,6 +31,8 @@ public class LoginPanelCtr {
     private Socket client=null;
     private ObjectInputStream ois=null;
     private ObjectOutputStream oos=null;
+    private String host= DaoFactory.getHost();
+    private String port= DaoFactory.getPort();
 
     public void submition() {
         String username=usernameText.getText();
@@ -43,7 +46,7 @@ public class LoginPanelCtr {
             return;
         }
         try {
-            client=new Socket("192.168.43.79",8888);  //客户端连接
+            client=new Socket(host,Integer.parseInt(port));  //客户端连接
             oos=new ObjectOutputStream(client.getOutputStream());
             ois=new ObjectInputStream(client.getInputStream());
 

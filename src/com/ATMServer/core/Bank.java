@@ -25,7 +25,8 @@ public class Bank{
         }
         return bank;
     }
-    private static AccountDAO dao= DaoFactory.getAccountDAO("JDBCImpl");
+
+    public static AccountDAO dao = DaoFactory.getAccountDAO(DaoFactory.getDAOType());
     private TreeMap<String,Account> accounts; //DAO
     private int accountsNum;
 

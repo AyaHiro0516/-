@@ -2,19 +2,37 @@ package com.dao;
 
 import com.ATMServer.core.Bank;
 import com.accountType.*;
+import org.dom4j.Document;
+import org.dom4j.Element;
+import org.dom4j.io.SAXReader;
 
+import java.io.File;
 import java.sql.*;
 import java.util.TreeMap;
 
 public class AccountDAOJDBCImpl implements AccountDAO {
-    static final String DB_URL = "jdbc:mysql://localhost:3306/setraining?useSSL=false";
-    static final String driver = "com.mysql.jdbc.Driver";
-    static final String USER = "root";
-    static final String PASS = "bxy0516";
-    static Connection conn=null;
-    static PreparedStatement ps=null;
-    static ResultSet rs=null;
+    private static  String DB_URL = null;
+    private static  String driver = null;
+    private static  String USER = null;
+    private static  String PASS = null;
+    private static Connection conn=null;
+    private static PreparedStatement ps=null;
+    private static ResultSet rs=null;
 
+    static {  //加载配置文件
+        try{
+            SAXReader reader=new SAXReader();
+            Document doc=reader.read(new File("config/ATMSystem.xml"));
+            Element root=doc.getRootElement();
+            Element elem=root.element("DAOJDBC");
+            DB_URL=elem.elementText("DB_URL");
+            driver=elem.elementText("driver");
+            USER=elem.elementText("USER");
+            PASS=elem.elementText("PASS");
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
     public static Connection getConnection() throws SQLException {
         return DriverManager.getConnection(DB_URL,USER,PASS);
     }
@@ -61,7 +79,7 @@ public class AccountDAOJDBCImpl implements AccountDAO {
                 Account account=new SavingAccount().setAccountType("SavingAccount");
                 long userId=rs.getLong("userId");           account.setId(userId);
                 String passWord=rs.getString("passWord");   account.setPassword(passWord);
-                String name=rs.getString("userName");           account.setName(name);
+                String name=rs.getString("userName");       account.setName(name);
                 String personId=rs.getString("personId");   account.setPersonId(personId);
                 String email=rs.getString("email");         account.setEmail(email);
                 String adress=rs.getString("adress");       account.setAdress(adress);
@@ -75,7 +93,7 @@ public class AccountDAOJDBCImpl implements AccountDAO {
                 Account account=new CreditAccount().setAccountType("CreditAccount");
                 long userId=rs.getLong("userId");           account.setId(userId);
                 String passWord=rs.getString("passWord");   account.setPassword(passWord);
-                String name=rs.getString("userName");           account.setName(name);
+                String name=rs.getString("userName");       account.setName(name);
                 String personId=rs.getString("personId");   account.setPersonId(personId);
                 String email=rs.getString("email");         account.setEmail(email);
                 String adress=rs.getString("adress");       account.setAdress(adress);
@@ -90,7 +108,7 @@ public class AccountDAOJDBCImpl implements AccountDAO {
                 Account account=new LoanSavingAccount().setAccountType("LoanSavingAccount");
                 long userId=rs.getLong("userId");           account.setId(userId);
                 String passWord=rs.getString("passWord");   account.setPassword(passWord);
-                String name=rs.getString("userName");           account.setName(name);
+                String name=rs.getString("userName");       account.setName(name);
                 String personId=rs.getString("personId");   account.setPersonId(personId);
                 String email=rs.getString("email");         account.setEmail(email);
                 String adress=rs.getString("adress");       account.setAdress(adress);
@@ -105,7 +123,7 @@ public class AccountDAOJDBCImpl implements AccountDAO {
                 Account account=new LoanCreditAccount().setAccountType("LoanCreditAccount");
                 long userId=rs.getLong("userId");           account.setId(userId);
                 String passWord=rs.getString("passWord");   account.setPassword(passWord);
-                String name=rs.getString("userName");           account.setName(name);
+                String name=rs.getString("userName");       account.setName(name);
                 String personId=rs.getString("personId");   account.setPersonId(personId);
                 String email=rs.getString("email");         account.setEmail(email);
                 String adress=rs.getString("adress");       account.setAdress(adress);

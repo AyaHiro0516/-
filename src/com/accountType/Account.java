@@ -16,7 +16,7 @@ abstract public class Account implements Serializable {
     private String accountType;
     private double balance;
     private boolean isOnline;
-    private static AccountDAO dao=DaoFactory.getAccountDAO("JDBCImpl");
+    private static AccountDAO dao=DaoFactory.getAccountDAO(DaoFactory.getDAOType());
 
     private static long returnId() {
         return dao.returnId();
