@@ -1,42 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <AccountList> 
-  <usableId>10003</usableId>  
-  <SavingAccount> 
-    <Account name="boss"> 
-      <userId>10001</userId>  
-      <passWord>1</passWord>  
-      <userName>boss</userName>  
-      <personId>1</personId>  
-      <email>1</email>  
-      <adress>1</adress>  
-      <balance>500.0</balance> 
-    </Account> 
-  </SavingAccount>  
-  <CreditAccount> 
-    <Account name="gg"> 
-      <userId>10002</userId>  
-      <passWord>1</passWord>  
-      <userName>gg</userName>  
-      <personId>1</personId>  
-      <email>1</email>  
-      <adress>1</adress>  
-      <balance>0</balance>  
-      <ceiling>0</ceiling> 
-    </Account> 
-  </CreditAccount>  
-  <LoanSavingAccount/>  
-  <LoanCreditAccount> 
-    <Account name="bxy"> 
-      <userId>10000</userId>  
-      <passWord>111</passWord>  
-      <userName>bxy</userName>  
-      <personId>111</personId>  
-      <email>111</email>  
-      <adress>111</adress>  
-      <balance>500.0</balance>  
-      <ceiling>0</ceiling>  
-      <loan>0</loan> 
-    </Account> 
-  </LoanCreditAccount> 
+  <usableId>10001</usableId>  
+  <SavingAccount/>  
+  <CreditAccount/>  
+  <LoanSavingAccount>
+    <Account name="bxy">
+      <userId>10000</userId>
+      <passWord>1</passWord>
+      <userName>bxy</userName>
+      <personId>1</personId>
+      <email>1</email>
+      <adress>1</adress>
+      <balance>0</balance>
+      <loan>0</loan>
+    </Account>
+  </LoanSavingAccount>  
+  <LoanCreditAccount/> 
 </AccountList>

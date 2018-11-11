@@ -14,9 +14,10 @@ import java.util.List;
 import java.util.TreeMap;
 
 public class AccountDAOXMLImpl implements AccountDAO {
+    private static String xmlpos="F:\\IntelliJ IDEA Projects\\OOP\\ATMSystem\\config\\AccountData.xml";
     public void writeXML(Document doc){
         try {
-            FileOutputStream out = new FileOutputStream("config/AccountData.xml");
+            FileOutputStream out = new FileOutputStream(xmlpos);
             OutputFormat format = OutputFormat.createPrettyPrint();
             format.setEncoding("utf-8");
             XMLWriter writer = new XMLWriter(out,format);
@@ -31,7 +32,7 @@ public class AccountDAOXMLImpl implements AccountDAO {
         long id=0;
         try {
             SAXReader reader=new SAXReader();
-            Document doc=reader.read(new File("config/AccountData.xml"));
+            Document doc=reader.read(new File(xmlpos));
             Element root=doc.getRootElement();
             Element elem=root.element("usableId");
             id=new Long(elem.getText());
@@ -48,7 +49,7 @@ public class AccountDAOXMLImpl implements AccountDAO {
         TreeMap<String,Account> map=new TreeMap<>();
         try {
             SAXReader reader=new SAXReader();
-            Document doc=reader.read(new File("config/AccountData.xml"));
+            Document doc=reader.read(new File(xmlpos));
             Element root=doc.getRootElement();
             List<Element> savingacc=root.element("SavingAccount").elements("Account");
             for(Element e :savingacc){
@@ -116,7 +117,7 @@ public class AccountDAOXMLImpl implements AccountDAO {
     public void addAccount(long userId, String password, String name, String personId, String email, String adress, String acType) {
         try {
             SAXReader reader=new SAXReader();
-            Document doc=reader.read(new File("config/AccountData.xml"));
+            Document doc=reader.read(new File(xmlpos));
             Element root=doc.getRootElement();
             Element elem=root.element(acType).addElement("Account");
             elem.addAttribute("name",name);
@@ -150,7 +151,7 @@ public class AccountDAOXMLImpl implements AccountDAO {
         String acType= Bank.getBank().getAccounts().get(name).getAccountType();
         try {
             SAXReader reader=new SAXReader();
-            Document doc=reader.read(new File("config/AccountData.xml"));
+            Document doc=reader.read(new File(xmlpos));
             Element root=doc.getRootElement();
             Element elem=root.element(acType).element("Account");
             double balance=new Double(elem.elementText("balance"));
@@ -166,7 +167,7 @@ public class AccountDAOXMLImpl implements AccountDAO {
         String acType= Bank.getBank().getAccounts().get(name).getAccountType();
         try {
             SAXReader reader=new SAXReader();
-            Document doc=reader.read(new File("config/AccountData.xml"));
+            Document doc=reader.read(new File(xmlpos));
             Element root=doc.getRootElement();
             Element elem=root.element(acType).element("Account");
             double ceiling=new Double(elem.elementText("ceiling"));
@@ -182,7 +183,7 @@ public class AccountDAOXMLImpl implements AccountDAO {
         String acType= Bank.getBank().getAccounts().get(name).getAccountType();
         try {
             SAXReader reader=new SAXReader();
-            Document doc=reader.read(new File("config/AccountData.xml"));
+            Document doc=reader.read(new File(xmlpos));
             Element root=doc.getRootElement();
             Element elem=root.element(acType).element("Account");
             double loan=new Double(elem.elementText("loan"));

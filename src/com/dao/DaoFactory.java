@@ -7,11 +7,12 @@ import org.dom4j.io.SAXReader;
 import java.io.File;
 
 public class DaoFactory {
+    private static String configPos="F:\\IntelliJ IDEA Projects\\OOP\\ATMSystem\\config\\ATMSystem.xml";
     public static String getHost(){
         String host=null;
         try{
             SAXReader reader=new SAXReader();
-            Document doc=reader.read(new File("config/ATMSystem.xml"));
+            Document doc=reader.read(new File(configPos));
             Element root=doc.getRootElement();
             Element elem=root.element("Socket");
             host=elem.elementText("host");
@@ -24,7 +25,7 @@ public class DaoFactory {
         String port=null;
         try{
             SAXReader reader=new SAXReader();
-            Document doc=reader.read(new File("config/ATMSystem.xml"));
+            Document doc=reader.read(new File(configPos));
             Element root=doc.getRootElement();
             Element elem=root.element("Socket");
             port=elem.elementText("port");
@@ -37,7 +38,7 @@ public class DaoFactory {
         String type=null;
         try{
             SAXReader reader=new SAXReader();
-            Document doc=reader.read(new File("config/ATMSystem.xml"));
+            Document doc=reader.read(new File(configPos));
             Element root=doc.getRootElement();
             Element elem=root.element("DAOType");
             type=elem.getText();

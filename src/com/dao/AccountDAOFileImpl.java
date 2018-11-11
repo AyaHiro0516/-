@@ -13,11 +13,11 @@ import java.util.TreeMap;
 public class AccountDAOFileImpl implements AccountDAO{
     private static File idFile = null;
     private static File dataFile = null;
-
+    private static String configPos="F:\\IntelliJ IDEA Projects\\OOP\\ATMSystem\\config\\ATMSystem.xml";
     static { //加载配置文件
         try{
             SAXReader reader=new SAXReader();
-            Document doc=reader.read(new File("config/ATMSystem.xml"));
+            Document doc=reader.read(new File(configPos));
             Element root=doc.getRootElement();
             Element elem=root.element("DAOFile");
             idFile=new File(elem.elementText("idFile"));
