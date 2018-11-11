@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <properties>
     <DAOType>XMLImpl</DAOType>
-
+    <DAOXML>
+        <AccountData>F:/test/AccountData.xml</AccountData>
+    </DAOXML>
     <DAOFile>
         <idFile>F:/test/id.txt</idFile>
         <dataFile>F:/test/data.txt</dataFile>

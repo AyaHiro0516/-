@@ -10,14 +10,27 @@ import org.dom4j.io.XMLWriter;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.net.URL;
 import java.util.List;
 import java.util.TreeMap;
 
 public class AccountDAOXMLImpl implements AccountDAO {
-    private static String xmlpos="F:\\IntelliJ IDEA Projects\\OOP\\ATMSystem\\config\\AccountData.xml";
+    private static File xmlFile = null;
+    private static URL url=DaoFactory.class.getResource("/config/ATMSystem.xml");
+    static { //加载配置文件
+        try{
+            SAXReader reader=new SAXReader();
+            Document doc=reader.read(url);
+            Element root=doc.getRootElement();
+            Element elem=root.element("DAOXML").element("AccountData");
+            xmlFile=new File(elem.getText());
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
     public void writeXML(Document doc){
         try {
-            FileOutputStream out = new FileOutputStream(xmlpos);
+            FileOutputStream out=new FileOutputStream(xmlFile);
             OutputFormat format = OutputFormat.createPrettyPrint();
             format.setEncoding("utf-8");
             XMLWriter writer = new XMLWriter(out,format);
@@ -32,7 +45,7 @@ public class AccountDAOXMLImpl implements AccountDAO {
         long id=0;
         try {
             SAXReader reader=new SAXReader();
-            Document doc=reader.read(new File(xmlpos));
+            Document doc=reader.read(xmlFile);
             Element root=doc.getRootElement();
             Element elem=root.element("usableId");
             id=new Long(elem.getText());
@@ -49,7 +62,7 @@ public class AccountDAOXMLImpl implements AccountDAO {
         TreeMap<String,Account> map=new TreeMap<>();
         try {
             SAXReader reader=new SAXReader();
-            Document doc=reader.read(new File(xmlpos));
+            Document doc=reader.read(xmlFile);
             Element root=doc.getRootElement();
             List<Element> savingacc=root.element("SavingAccount").elements("Account");
             for(Element e :savingacc){
@@ -117,7 +130,7 @@ public class AccountDAOXMLImpl implements AccountDAO {
     public void addAccount(long userId, String password, String name, String personId, String email, String adress, String acType) {
         try {
             SAXReader reader=new SAXReader();
-            Document doc=reader.read(new File(xmlpos));
+            Document doc=reader.read(xmlFile);
             Element root=doc.getRootElement();
             Element elem=root.element(acType).addElement("Account");
             elem.addAttribute("name",name);
@@ -151,7 +164,7 @@ public class AccountDAOXMLImpl implements AccountDAO {
         String acType= Bank.getBank().getAccounts().get(name).getAccountType();
         try {
             SAXReader reader=new SAXReader();
-            Document doc=reader.read(new File(xmlpos));
+            Document doc=reader.read(xmlFile);
             Element root=doc.getRootElement();
             Element elem=root.element(acType).element("Account");
             double balance=new Double(elem.elementText("balance"));
@@ -167,7 +180,7 @@ public class AccountDAOXMLImpl implements AccountDAO {
         String acType= Bank.getBank().getAccounts().get(name).getAccountType();
         try {
             SAXReader reader=new SAXReader();
-            Document doc=reader.read(new File(xmlpos));
+            Document doc=reader.read(xmlFile);
             Element root=doc.getRootElement();
             Element elem=root.element(acType).element("Account");
             double ceiling=new Double(elem.elementText("ceiling"));
@@ -183,7 +196,7 @@ public class AccountDAOXMLImpl implements AccountDAO {
         String acType= Bank.getBank().getAccounts().get(name).getAccountType();
         try {
             SAXReader reader=new SAXReader();
-            Document doc=reader.read(new File(xmlpos));
+            Document doc=reader.read(xmlFile);
             Element root=doc.getRootElement();
             Element elem=root.element(acType).element("Account");
             double loan=new Double(elem.elementText("loan"));

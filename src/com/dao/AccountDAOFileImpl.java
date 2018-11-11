@@ -7,17 +7,18 @@ import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
 
 import java.io.*;
+import java.net.URL;
 import java.util.Scanner;
 import java.util.TreeMap;
 
 public class AccountDAOFileImpl implements AccountDAO{
     private static File idFile = null;
     private static File dataFile = null;
-    private static String configPos="F:\\IntelliJ IDEA Projects\\OOP\\ATMSystem\\config\\ATMSystem.xml";
+    private static URL url=DaoFactory.class.getResource("/config/ATMSystem.xml");
     static { //加载配置文件
         try{
             SAXReader reader=new SAXReader();
-            Document doc=reader.read(new File(configPos));
+            Document doc=reader.read(url);
             Element root=doc.getRootElement();
             Element elem=root.element("DAOFile");
             idFile=new File(elem.elementText("idFile"));

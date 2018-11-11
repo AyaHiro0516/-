@@ -6,7 +6,7 @@ import org.dom4j.Document;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
 
-import java.io.File;
+import java.net.URL;
 import java.sql.*;
 import java.util.TreeMap;
 
@@ -15,14 +15,14 @@ public class AccountDAOJDBCImpl implements AccountDAO {
     private static  String driver = null;
     private static  String USER = null;
     private static  String PASS = null;
-    private static Connection conn=null;
-    private static PreparedStatement ps=null;
-    private static ResultSet rs=null;
-    private static String configPos="F:\\IntelliJ IDEA Projects\\OOP\\ATMSystem\\config\\ATMSystem.xml";
+    private static Connection conn = null;
+    private static PreparedStatement ps = null;
+    private static ResultSet rs = null;
+    private static URL url=DaoFactory.class.getResource("/config/ATMSystem.xml");
     static {  //加载配置文件
         try{
             SAXReader reader=new SAXReader();
-            Document doc=reader.read(new File(configPos));
+            Document doc=reader.read(url);
             Element root=doc.getRootElement();
             Element elem=root.element("DAOJDBC");
             DB_URL=elem.elementText("DB_URL");
