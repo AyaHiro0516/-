@@ -7,23 +7,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5c81af21-2617-4ac7-b806-0de37936502c" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/artifacts/ATMClient_jar.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/artifacts/ATMServer_jar.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ATMClient_jar/ATMClient.jar" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ATMClient_jar/dom4j-2.1.1.jar" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ATMClient_jar/mysql-connector-java-5.1.47.jar" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ATMServer_jar/ATMServer.jar" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ATMServer_jar/dom4j-2.1.1.jar" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ATMServer_jar/mysql-connector-java-5.1.47.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/config/AccountData.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ATMSystem/com/accountType/Account.class" afterPath="$PROJECT_DIR$/out/production/ATMSystem/com/accountType/Account.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ATMSystem/com/dao/AccountDAOFileImpl.class" afterPath="$PROJECT_DIR$/out/production/ATMSystem/com/dao/AccountDAOFileImpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ATMSystem/com/dao/AccountDAOJDBCImpl.class" afterPath="$PROJECT_DIR$/out/production/ATMSystem/com/dao/AccountDAOJDBCImpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ATMSystem/com/dao/AccountDAOXMLImpl.class" afterPath="$PROJECT_DIR$/out/production/ATMSystem/com/dao/AccountDAOXMLImpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ATMSystem/com/dao/DaoFactory.class" afterPath="$PROJECT_DIR$/out/production/ATMSystem/com/dao/DaoFactory.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ATMSystem.iml" afterPath="$PROJECT_DIR$/ATMSystem.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ATMSystem/META-INF_forClient/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/out/production/ATMSystem/META-INF_forClient/META-INF/MANIFEST.MF" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ATMSystem/META-INF_forServer/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/out/production/ATMSystem/META-INF_forServer/META-INF/MANIFEST.MF" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ATMSystem/config/ATMSystem.xml" afterPath="$PROJECT_DIR$/out/production/ATMSystem/config/ATMSystem.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/META-INF_forClient/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/src/META-INF_forClient/META-INF/MANIFEST.MF" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/META-INF_forServer/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/src/META-INF_forServer/META-INF/MANIFEST.MF" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dao/AccountDAOFileImpl.java" afterPath="$PROJECT_DIR$/src/com/dao/AccountDAOFileImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dao/AccountDAOJDBCImpl.java" afterPath="$PROJECT_DIR$/src/com/dao/AccountDAOJDBCImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dao/AccountDAOXMLImpl.java" afterPath="$PROJECT_DIR$/src/com/dao/AccountDAOXMLImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dao/DaoFactory.java" afterPath="$PROJECT_DIR$/src/com/dao/DaoFactory.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/config/ATMSystem.xml" afterPath="$PROJECT_DIR$/src/config/ATMSystem.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/config/ATMSystem.xml" afterPath="$PROJECT_DIR$/src/config/ATMSystem.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -52,8 +60,8 @@
       <file leaf-file-name="AccountDAOXMLImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/dao/AccountDAOXMLImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+            <state relative-caret-position="3213">
+              <caret line="119" column="106" lean-forward="true" selection-start-line="119" selection-start-column="106" selection-end-line="119" selection-end-column="106" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -61,11 +69,73 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ServerStart.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DaoFactory.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/dao/DaoFactory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AccountDAOJSONImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/dao/AccountDAOJSONImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2160">
+              <caret line="80" column="0" lean-forward="false" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ATMSystem.iml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ATMSystem.iml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="162">
+              <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MANIFEST.MF" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/META-INF_forServer/META-INF/MANIFEST.MF">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ATMSystem.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/config/ATMSystem.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="216">
+              <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AccountDAOFileImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/dao/AccountDAOFileImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="779">
+              <caret line="38" column="29" lean-forward="false" selection-start-line="38" selection-start-column="29" selection-end-line="38" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ServerStart.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/ATMServer/ServerStart.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="104" column="0" lean-forward="true" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
+            <state relative-caret-position="243">
+              <caret line="43" column="31" lean-forward="true" selection-start-line="43" selection-start-column="31" selection-end-line="43" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -74,74 +144,8 @@
       <file leaf-file-name="ClientStart.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/ATMClient/ClientStart.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="112" column="35" lean-forward="false" selection-start-line="112" selection-start-column="35" selection-end-line="112" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="File.java" pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Java JDK/src.zip!/java/io/File.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="10152">
-              <caret line="411" column="11" lean-forward="false" selection-start-line="411" selection-start-column="11" selection-end-line="411" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FileOutputStream.java" pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Java JDK/src.zip!/java/io/FileOutputStream.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2133">
-              <caret line="103" column="7" lean-forward="false" selection-start-line="103" selection-start-column="7" selection-end-line="103" selection-end-column="7" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AccountDAOFileImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/dao/AccountDAOFileImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
-              <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AccountDAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/dao/AccountDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="5" column="9" lean-forward="false" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DaoFactory.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/dao/DaoFactory.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="12" column="12" lean-forward="true" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ATMSystem.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/config/ATMSystem.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="11" column="13" lean-forward="true" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+            <state relative-caret-position="2970">
+              <caret line="123" column="28" lean-forward="false" selection-start-line="123" selection-start-column="28" selection-end-line="123" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -150,23 +154,23 @@
       <file leaf-file-name="AccountDAOJDBCImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/dao/AccountDAOJDBCImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+            <state relative-caret-position="5022">
+              <caret line="186" column="33" lean-forward="true" selection-start-line="186" selection-start-column="33" selection-end-line="186" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1541946599920" expanded="true" signature="1665:1692" ph="SELECT userI... usableId" />
-                <marker date="1541946599920" expanded="true" signature="1854:1882" ph="UPDATE usabl... " />
-                <marker date="1541946599920" expanded="true" signature="2316:2343" ph="SELECT * FRO... SavingAccount" />
-                <marker date="1541946599920" expanded="true" signature="3198:3225" ph="SELECT * FRO... CreditAccount" />
-                <marker date="1541946599920" expanded="true" signature="4186:4217" ph="SELECT * FRO... LoanSavingAccount" />
-                <marker date="1541946599920" expanded="true" signature="5184:5215" ph="SELECT * FRO... LoanCreditAccount" />
-                <marker date="1541946599920" expanded="true" signature="6676:6778" ph="INSERT INTO missingValue... " />
-                <marker date="1541946599920" expanded="true" signature="7493:7540" ph="SELECT balan... missingValue" />
-                <marker date="1541946599920" expanded="true" signature="7795:7843" ph="UPDATE missi... " />
-                <marker date="1541946599920" expanded="true" signature="8381:8428" ph="SELECT ceili... missingValue" />
-                <marker date="1541946599920" expanded="true" signature="8683:8731" ph="UPDATE missi... " />
-                <marker date="1541946599920" expanded="true" signature="9266:9310" ph="SELECT loan missingValue" />
-                <marker date="1541946599920" expanded="true" signature="9556:9601" ph="UPDATE missi... " />
+                <marker date="1542184819109" expanded="true" signature="1676:1703" ph="SELECT userI... usableId" />
+                <marker date="1542184819109" expanded="true" signature="1865:1893" ph="UPDATE usabl... " />
+                <marker date="1542184819109" expanded="true" signature="2327:2354" ph="SELECT * FRO... SavingAccount" />
+                <marker date="1542184819109" expanded="true" signature="3209:3236" ph="SELECT * FRO... CreditAccount" />
+                <marker date="1542184819109" expanded="true" signature="4197:4228" ph="SELECT * FRO... LoanSavingAccount" />
+                <marker date="1542184819109" expanded="true" signature="5195:5226" ph="SELECT * FRO... LoanCreditAccount" />
+                <marker date="1542184819109" expanded="true" signature="6688:6790" ph="INSERT INTO missingValue... " />
+                <marker date="1542184819109" expanded="true" signature="7506:7553" ph="SELECT balan... missingValue" />
+                <marker date="1542184819109" expanded="true" signature="7808:7856" ph="UPDATE missi... " />
+                <marker date="1542184819109" expanded="true" signature="8395:8442" ph="SELECT ceili... missingValue" />
+                <marker date="1542184819109" expanded="true" signature="8697:8745" ph="UPDATE missi... " />
+                <marker date="1542184819109" expanded="true" signature="9281:9325" ph="SELECT loan missingValue" />
+                <marker date="1542184819109" expanded="true" signature="9571:9616" ph="UPDATE missi... " />
               </folding>
             </state>
           </provider>
@@ -205,6 +209,9 @@
       <find>upDate</find>
       <find>up</find>
       <find>update</find>
+      <find>Bank</find>
+      <find>aderss</find>
+      <find>adress</find>
     </findStrings>
     <dirStrings>
       <dir>C:\Java JDK\jre\lib\ext\jfxrt.jar</dir>
@@ -221,14 +228,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/ATMServer/view/ServerGuiCtr.java" />
-        <option value="$PROJECT_DIR$/src/com/gui/BusinessPanelCtr.java" />
-        <option value="$PROJECT_DIR$/src/com/gui/LoginPanelCtr.java" />
-        <option value="$PROJECT_DIR$/src/com/gui/RegisterPanelCtr.java" />
-        <option value="$PROJECT_DIR$/src/ATMServer/accountType/Account.java" />
-        <option value="$PROJECT_DIR$/src/ATMServer/ServerThread.java" />
-        <option value="$PROJECT_DIR$/src/ATMServer/TransObject.java" />
-        <option value="$PROJECT_DIR$/src/ATMServer/Bank.java" />
         <option value="$PROJECT_DIR$/src/com/MainApp.java" />
         <option value="$PROJECT_DIR$/src/com/ATMClient/MainApp.java" />
         <option value="$PROJECT_DIR$/src/com/TransObject.java" />
@@ -250,28 +249,36 @@
         <option value="$PROJECT_DIR$/src/com/dao/AccountDAOCollectionImpl.java" />
         <option value="$PROJECT_DIR$/src/com/Test.java" />
         <option value="$PROJECT_DIR$/src/com/dao/AccountDao.java" />
-        <option value="$PROJECT_DIR$/src/com/accountType/CreditAccount.java" />
-        <option value="$PROJECT_DIR$/src/com/accountType/SavingAccount.java" />
-        <option value="$PROJECT_DIR$/src/com/accountType/LoanSavingAccount.java" />
-        <option value="$PROJECT_DIR$/src/com/accountType/LoanCreditAccount.java" />
         <option value="$PROJECT_DIR$/src/com/dao/AccountDAO.java" />
         <option value="$PROJECT_DIR$/src/com/ATMServer/core/ServerThread.java" />
-        <option value="$PROJECT_DIR$/src/com/accountType/Account.java" />
         <option value="$PROJECT_DIR$/src/com/ATMClient/gui/BusinessPanelCtr.java" />
         <option value="$PROJECT_DIR$/src/com/ATMClient/gui/LoginPanelCtr.java" />
         <option value="$PROJECT_DIR$/src/com/ATMClient/gui/RegisterPanelCtr.java" />
-        <option value="$PROJECT_DIR$/src/com/ATMServer/ServerStart.java" />
         <option value="$PROJECT_DIR$/src/com/ATMServer/core/Bank.java" />
         <option value="$PROJECT_DIR$/src/Test.java" />
         <option value="$PROJECT_DIR$/config/ATMSystem.xml" />
         <option value="$PROJECT_DIR$/config/AccountData.xml" />
-        <option value="$PROJECT_DIR$/src/com/dao/AccountDAOFileImpl.java" />
         <option value="$PROJECT_DIR$/src/com/dao/test.java" />
         <option value="$PROJECT_DIR$/src/config/AccountData.xml" />
-        <option value="$PROJECT_DIR$/src/config/ATMSystem.xml" />
+        <option value="$PROJECT_DIR$/src/com/dao/AccountDAOJSON.java" />
         <option value="$PROJECT_DIR$/src/com/dao/DaoFactory.java" />
-        <option value="$PROJECT_DIR$/src/com/dao/AccountDAOXMLImpl.java" />
+        <option value="$USER_HOME$/Downloads/gson-2.8.5.jar!/com/google/gson/Gson.class" />
         <option value="$PROJECT_DIR$/src/com/dao/AccountDAOJDBCImpl.java" />
+        <option value="$PROJECT_DIR$/src/com/dao/AccountDAOFileImpl.java" />
+        <option value="$PROJECT_DIR$/src/com/ATMServer/ServerStart.java" />
+        <option value="$USER_HOME$/Downloads/gson-2.8.5.jar!/com/google/gson/internal/ConstructorConstructor.class" />
+        <option value="$USER_HOME$/Downloads/gson-2.8.5.jar!/com/google/gson/internal/bind/TypeAdapterRuntimeTypeWrapper.class" />
+        <option value="$USER_HOME$/Downloads/gson-2.8.5.jar!/com/google/gson/internal/bind/MapTypeAdapterFactory.class" />
+        <option value="$PROJECT_DIR$/src/com/accountType/SavingAccount.java" />
+        <option value="$PROJECT_DIR$/src/config/ATMSystem.xml" />
+        <option value="$PROJECT_DIR$/src/com/accountType/test.java" />
+        <option value="$PROJECT_DIR$/src/com/dao/AccountDAOXMLImpl.java" />
+        <option value="$PROJECT_DIR$/src/com/accountType/CreditAccount.java" />
+        <option value="$PROJECT_DIR$/src/com/accountType/LoanCreditAccount.java" />
+        <option value="$PROJECT_DIR$/src/com/accountType/LoanSavingAccount.java" />
+        <option value="$PROJECT_DIR$/src/com/accountType/Account.java" />
+        <option value="$USER_HOME$/Downloads/gson-2.8.5.jar!/com/google/gson/JsonElement.class" />
+        <option value="$PROJECT_DIR$/src/com/dao/AccountDAOJSONImpl.java" />
       </list>
     </option>
   </component>
@@ -305,6 +312,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -332,15 +340,19 @@
               <item name="ATMSystem" type="b2602c69:ProjectViewProjectNode" />
               <item name="ATMSystem" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="ATMServer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ATMSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="AndroidView" />
       <pane id="Scope" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -352,7 +364,10 @@
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/META-INF_forServer" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -382,7 +397,26 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.ClientStart">
+  <component name="RunManager" selected="Application.ServerStart">
+    <configuration name="AccountDAOJSONImpl" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="com.dao.AccountDAOJSONImpl" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="ATMSystem" />
+      <envs />
+    </configuration>
     <configuration name="ClientStart" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -419,39 +453,6 @@
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="ATMSystem" />
-      <envs />
-    </configuration>
-    <configuration name="Test (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="Test" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="ATMSystem" />
-      <envs />
-    </configuration>
-    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="com.Test" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="软件工程实训2" />
       <envs />
     </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
@@ -547,6 +548,25 @@
       <properties />
       <listeners />
     </configuration>
+    <configuration name="test (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.accountType.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="com.accountType.test" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="ATMSystem" />
+      <envs />
+    </configuration>
     <configuration name="test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -569,17 +589,17 @@
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Application.ClientStart" />
       <item index="1" class="java.lang.String" itemvalue="Application.ServerStart" />
-      <item index="2" class="java.lang.String" itemvalue="Application.Test" />
-      <item index="3" class="java.lang.String" itemvalue="Application.Test (1)" />
-      <item index="4" class="java.lang.String" itemvalue="Application.test" />
+      <item index="2" class="java.lang.String" itemvalue="Application.test" />
+      <item index="3" class="java.lang.String" itemvalue="Application.AccountDAOJSONImpl" />
+      <item index="4" class="java.lang.String" itemvalue="Application.test (1)" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.ClientStart" />
-        <item index="1" class="java.lang.String" itemvalue="Application.ServerStart" />
-        <item index="2" class="java.lang.String" itemvalue="Application.test" />
-        <item index="3" class="java.lang.String" itemvalue="Application.Test (1)" />
-        <item index="4" class="java.lang.String" itemvalue="Application.Test" />
+        <item index="0" class="java.lang.String" itemvalue="Application.ServerStart" />
+        <item index="1" class="java.lang.String" itemvalue="Application.ClientStart" />
+        <item index="2" class="java.lang.String" itemvalue="Application.AccountDAOJSONImpl" />
+        <item index="3" class="java.lang.String" itemvalue="Application.test (1)" />
+        <item index="4" class="java.lang.String" itemvalue="Application.test" />
       </list>
     </recent_temporary>
   </component>
@@ -724,11 +744,24 @@
       <workItem from="1541925472902" duration="2123000" />
       <workItem from="1541938358179" duration="7321000" />
       <workItem from="1541945856132" duration="752000" />
+      <workItem from="1542022898060" duration="2048000" />
+      <workItem from="1542072326625" duration="17000" />
+      <workItem from="1542075034219" duration="155000" />
+      <workItem from="1542169482772" duration="2943000" />
+      <workItem from="1542178907190" duration="4422000" />
+      <workItem from="1542185310363" duration="1342000" />
+      <workItem from="1542191429651" duration="9381000" />
+      <workItem from="1542202908987" duration="4529000" />
+      <workItem from="1542243470205" duration="2416000" />
+      <workItem from="1542270060208" duration="2978000" />
+      <workItem from="1542273155310" duration="4304000" />
+      <workItem from="1542367723685" duration="650000" />
+      <workItem from="1542503759708" duration="7280000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="239682000" />
+    <option name="totallyTimeSpent" value="282147000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -752,18 +785,18 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29383886" sideWeight="0.50429183" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.49570817" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22748815" sideWeight="0.49570817" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2945279" sideWeight="0.4885845" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18669528" sideWeight="0.4885845" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25912017" sideWeight="0.51141554" order="5" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32819906" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.32819906" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" x="28" y="376" width="1864" height="277" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289941" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -784,95 +817,7 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/ATMClient/gui/MainPanel.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ATMClient/gui/LoginPanel.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/accountType/LoanCreditAccount.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/accountType/LoanSavingAccount.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/artifacts/ATMServer_jar.xml" />
-    <entry file="file://$PROJECT_DIR$/.idea/libraries/mysql_connector_java_5_1_47.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/artifacts/ATMClient_jar.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/libraries/mysql_connector_java_5_1.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/ATMSystem.tld" />
-    <entry file="file://$PROJECT_DIR$/config/grt.xsl" />
-    <entry file="file://$PROJECT_DIR$/ATMSystem.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/META-INF_forServer/META-INF/MANIFEST.MF" />
-    <entry file="file://$PROJECT_DIR$/config/das.xml" />
     <entry file="file://$PROJECT_DIR$/config/dax.xml" />
-    <entry file="file://$PROJECT_DIR$/src/com/accountType/TransObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="472">
-          <caret line="62" column="5" lean-forward="false" selection-start-line="62" selection-start-column="5" selection-end-line="62" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/accountType/SavingAccount.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="10" column="55" lean-forward="false" selection-start-line="10" selection-start-column="55" selection-end-line="10" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Java JDK/src.zip!/java/net/Socket.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
@@ -894,50 +839,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/accountType/CreditAccount.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Test.java" />
     <entry file="file://$PROJECT_DIR$/src/com/ATMClient/gui/BusinessPanelCtr.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="999">
           <caret line="54" column="5" lean-forward="false" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1331#1332#0" expanded="false" />
-            <element signature="e#1360#1361#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ATMClient/gui/LoginPanelCtr.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ATMClient/gui/RegisterPanelCtr.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/accountType/Account.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="16" column="11" lean-forward="false" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -956,24 +862,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml" />
-    <entry file="file://$PROJECT_DIR$/src/com/ATMServer/core/Bank.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="5" column="15" lean-forward="false" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ATMServer/core/ServerThread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1458">
-          <caret line="62" column="43" lean-forward="false" selection-start-line="62" selection-start-column="43" selection-end-line="62" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ATMServer/gui/exitWarningCtr.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
@@ -981,19 +869,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ATMServer/gui/ServerGuiCtr.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Java JDK/src.zip!/java/lang/Class.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
           <caret line="2259" column="24" lean-forward="false" selection-start-line="2259" selection-start-column="24" selection-end-line="2259" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1012,19 +891,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dao/test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
-          <caret line="19" column="43" lean-forward="true" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/Downloads/dom4j-2.1.1.jar!/org/dom4j/tree/NamespaceStack.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="22" column="11" lean-forward="false" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1032,7 +902,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2052">
           <caret line="114" column="38" lean-forward="false" selection-start-line="114" selection-start-column="38" selection-end-line="114" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1040,9 +909,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2133">
           <caret line="103" column="7" lean-forward="false" selection-start-line="103" selection-start-column="7" selection-end-line="103" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1054,50 +920,205 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/config/AccountData.xml">
+    <entry file="file://$PROJECT_DIR$/src/config/AccountData.xml" />
+    <entry file="file://$PROJECT_DIR$/src/com/dao/Test.java" />
+    <entry file="jar://C:/Java JDK/src.zip!/java/lang/Long.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="8" column="30" lean-forward="false" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
+        <state relative-caret-position="-4849">
+          <caret line="226" column="0" lean-forward="true" selection-start-line="226" selection-start-column="0" selection-end-line="226" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ATMServer/ServerStart.java">
+    <entry file="jar://$USER_HOME$/Downloads/gson-2.8.5.jar!/com/google/gson/internal/ConstructorConstructor.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="104" column="0" lean-forward="true" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
+        <state relative-caret-position="207">
+          <caret line="84" column="0" lean-forward="false" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ATMServer/gui/ServerGuiCtr.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="702">
+          <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Downloads/gson-2.8.5.jar!/com/google/gson/internal/bind/TypeAdapterRuntimeTypeWrapper.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Downloads/gson-2.8.5.jar!/com/google/gson/internal/bind/MapTypeAdapterFactory.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="102" column="0" lean-forward="false" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dao/AccountDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/accountType/test.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/ATMClient/gui/LoginPanelCtr.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1458">
+          <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/accountType/TransObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1080">
+          <caret line="62" column="5" lean-forward="false" selection-start-line="62" selection-start-column="5" selection-end-line="62" selection-end-column="5" />
+          <folding>
+            <element signature="e#1362#1363#0" expanded="true" />
+            <element signature="e#1404#1405#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ATMServer/core/Bank.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="68" column="19" lean-forward="false" selection-start-line="68" selection-start-column="19" selection-end-line="68" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Java JDK/src.zip!/java/lang/Object.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4079">
+          <caret line="36" column="13" lean-forward="false" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/accountType/Loanable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ATMClient/gui/RegisterPanelCtr.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/accountType/LoanCreditAccount.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="7" column="11" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/accountType/LoanSavingAccount.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="7" column="11" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/accountType/SavingAccount.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-54">
+          <caret line="13" column="2" lean-forward="false" selection-start-line="13" selection-start-column="2" selection-end-line="13" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Downloads/gson-2.8.5.jar!/com/google/gson/Gson.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="508" column="17" lean-forward="false" selection-start-line="508" selection-start-column="17" selection-end-line="508" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/accountType/CreditAccount.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-760">
+          <caret line="14" column="11" lean-forward="false" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/accountType/Account.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="122" column="13" lean-forward="true" selection-start-line="122" selection-start-column="13" selection-end-line="122" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Downloads/gson-2.8.5.jar!/com/google/gson/JsonElement.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ATMServer/core/ServerThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="393">
+          <caret line="37" column="41" lean-forward="false" selection-start-line="37" selection-start-column="41" selection-end-line="37" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ATMClient/ClientStart.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="112" column="35" lean-forward="false" selection-start-line="112" selection-start-column="35" selection-end-line="112" selection-end-column="35" />
+        <state relative-caret-position="2970">
+          <caret line="123" column="28" lean-forward="false" selection-start-line="123" selection-start-column="28" selection-end-line="123" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ATMSystem.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/META-INF_forServer/META-INF/MANIFEST.MF">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/config/ATMSystem.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="11" column="13" lean-forward="true" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        <state relative-caret-position="216">
+          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dao/AccountDAO.java">
+    <entry file="file://$PROJECT_DIR$/src/com/dao/AccountDAOJSONImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="5" column="9" lean-forward="false" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dao/AccountDAOFileImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        <state relative-caret-position="2160">
+          <caret line="80" column="0" lean-forward="false" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1106,31 +1127,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dao/AccountDAOJDBCImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        <state relative-caret-position="5022">
+          <caret line="186" column="33" lean-forward="true" selection-start-line="186" selection-start-column="33" selection-end-line="186" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1541946599920" expanded="true" signature="1665:1692" ph="SELECT userI... usableId" />
-            <marker date="1541946599920" expanded="true" signature="1854:1882" ph="UPDATE usabl... " />
-            <marker date="1541946599920" expanded="true" signature="2316:2343" ph="SELECT * FRO... SavingAccount" />
-            <marker date="1541946599920" expanded="true" signature="3198:3225" ph="SELECT * FRO... CreditAccount" />
-            <marker date="1541946599920" expanded="true" signature="4186:4217" ph="SELECT * FRO... LoanSavingAccount" />
-            <marker date="1541946599920" expanded="true" signature="5184:5215" ph="SELECT * FRO... LoanCreditAccount" />
-            <marker date="1541946599920" expanded="true" signature="6676:6778" ph="INSERT INTO missingValue... " />
-            <marker date="1541946599920" expanded="true" signature="7493:7540" ph="SELECT balan... missingValue" />
-            <marker date="1541946599920" expanded="true" signature="7795:7843" ph="UPDATE missi... " />
-            <marker date="1541946599920" expanded="true" signature="8381:8428" ph="SELECT ceili... missingValue" />
-            <marker date="1541946599920" expanded="true" signature="8683:8731" ph="UPDATE missi... " />
-            <marker date="1541946599920" expanded="true" signature="9266:9310" ph="SELECT loan missingValue" />
-            <marker date="1541946599920" expanded="true" signature="9556:9601" ph="UPDATE missi... " />
+            <marker date="1542184819109" expanded="true" signature="1676:1703" ph="SELECT userI... usableId" />
+            <marker date="1542184819109" expanded="true" signature="1865:1893" ph="UPDATE usabl... " />
+            <marker date="1542184819109" expanded="true" signature="2327:2354" ph="SELECT * FRO... SavingAccount" />
+            <marker date="1542184819109" expanded="true" signature="3209:3236" ph="SELECT * FRO... CreditAccount" />
+            <marker date="1542184819109" expanded="true" signature="4197:4228" ph="SELECT * FRO... LoanSavingAccount" />
+            <marker date="1542184819109" expanded="true" signature="5195:5226" ph="SELECT * FRO... LoanCreditAccount" />
+            <marker date="1542184819109" expanded="true" signature="6688:6790" ph="INSERT INTO missingValue... " />
+            <marker date="1542184819109" expanded="true" signature="7506:7553" ph="SELECT balan... missingValue" />
+            <marker date="1542184819109" expanded="true" signature="7808:7856" ph="UPDATE missi... " />
+            <marker date="1542184819109" expanded="true" signature="8395:8442" ph="SELECT ceili... missingValue" />
+            <marker date="1542184819109" expanded="true" signature="8697:8745" ph="UPDATE missi... " />
+            <marker date="1542184819109" expanded="true" signature="9281:9325" ph="SELECT loan missingValue" />
+            <marker date="1542184819109" expanded="true" signature="9571:9616" ph="UPDATE missi... " />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dao/AccountDAOFileImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="779">
+          <caret line="38" column="29" lean-forward="false" selection-start-line="38" selection-start-column="29" selection-end-line="38" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dao/AccountDAOXMLImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        <state relative-caret-position="3213">
+          <caret line="119" column="106" lean-forward="true" selection-start-line="119" selection-start-column="106" selection-end-line="119" selection-end-column="106" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1139,11 +1168,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dao/DaoFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="12" column="12" lean-forward="true" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="105">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ATMServer/ServerStart.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="43" column="31" lean-forward="true" selection-start-line="43" selection-start-column="31" selection-end-line="43" selection-end-column="31" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1214,7 +1249,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>dom4j-2.1.1</last-edited>
+          <last-edited>gson-2.8.5</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

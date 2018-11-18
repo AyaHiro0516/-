@@ -21,6 +21,7 @@ public class DaoFactory {
         }
         return host;
     }
+
     public static String getPort(){
         String port=null;
         try{
@@ -34,6 +35,7 @@ public class DaoFactory {
         }
         return port;
     }
+
     public static String getDAOType(){
         String type=null;
         try{
@@ -47,6 +49,7 @@ public class DaoFactory {
         }
         return type;
     }
+
     public static AccountDAO getAccountDAO(String type){
         switch (type){
             case "JDBCImpl":
@@ -55,6 +58,8 @@ public class DaoFactory {
                 return new AccountDAOFileImpl();
             case "XMLImpl":
                 return new AccountDAOXMLImpl();
+            case "JSONImpl":
+                return new AccountDAOJSONImpl();
             default:
                 return null;
         }

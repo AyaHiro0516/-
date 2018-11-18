@@ -16,7 +16,7 @@ import java.util.TreeMap;
 
 public class AccountDAOXMLImpl implements AccountDAO {
     private static File xmlFile = null;
-    private static URL url=DaoFactory.class.getResource("/config/ATMSystem.xml");
+    private static URL url=AccountDAOXMLImpl.class.getResource("/config/ATMSystem.xml");
     static { //加载配置文件
         try{
             SAXReader reader=new SAXReader();
@@ -28,6 +28,7 @@ public class AccountDAOXMLImpl implements AccountDAO {
             e.printStackTrace();
         }
     }
+
     public void writeXML(Document doc){
         try {
             FileOutputStream out=new FileOutputStream(xmlFile);
@@ -40,6 +41,7 @@ public class AccountDAOXMLImpl implements AccountDAO {
             e.printStackTrace();
         }
     }
+
     @Override
     public long returnId() {
         long id=0;

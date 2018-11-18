@@ -1,6 +1,6 @@
 package com.dao;
 
-import com.ATMServer.ServerStart;
+import com.ATMServer.core.Bank;
 import com.accountType.Account;
 import org.dom4j.Document;
 import org.dom4j.Element;
@@ -14,7 +14,7 @@ import java.util.TreeMap;
 public class AccountDAOFileImpl implements AccountDAO{
     private static File idFile = null;
     private static File dataFile = null;
-    private static URL url=DaoFactory.class.getResource("/config/ATMSystem.xml");
+    private static URL url=AccountDAOFileImpl.class.getResource("/config/ATMSystem.xml");
     static { //加载配置文件
         try{
             SAXReader reader=new SAXReader();
@@ -27,6 +27,27 @@ public class AccountDAOFileImpl implements AccountDAO{
             e.printStackTrace();
         }
     }
+
+    public void upDate(){
+        FileOutputStream fos=null;
+        ObjectOutputStream oos=null;
+        try{
+            fos=new FileOutputStream(dataFile.toString());
+            oos=new ObjectOutputStream(fos);
+            oos.writeObject(Bank.getBank().getAccounts());
+            Bank.getBank().setAccountsNum(Bank.getBank().getAccounts().size());
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            try{
+                oos.close();
+                fos.close();
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+    }
+
     @Override
     public long returnId() {
         long id=0;
@@ -59,33 +80,14 @@ public class AccountDAOFileImpl implements AccountDAO{
         try{
             fis=new FileInputStream(dataFile.toString());
             ois=new ObjectInputStream(fis);
-            ServerStart.bank.setAccounts((TreeMap<String,Account>)ois.readObject());
-            ServerStart.bank.setAccountsNum(ServerStart.bank.getAccounts().size());
+            Bank.getBank().setAccounts((TreeMap<String,Account>)ois.readObject());
+            Bank.getBank().setAccountsNum(Bank.getBank().getAccounts().size());
         }catch (Exception e){
             e.printStackTrace();
         }finally {
             try{
                 ois.close();
                 fis.close();
-            }catch (Exception e){
-                e.printStackTrace();
-            }
-        }
-    }
-    public void upDate(){
-        FileOutputStream fos=null;
-        ObjectOutputStream oos=null;
-        try{
-            fos=new FileOutputStream(dataFile.toString());
-            oos=new ObjectOutputStream(fos);
-            oos.writeObject(ServerStart.bank.getAccounts());
-            ServerStart.bank.setAccountsNum(ServerStart.bank.getAccounts().size());
-        }catch (Exception e){
-            e.printStackTrace();
-        }finally {
-            try{
-                oos.close();
-                fos.close();
             }catch (Exception e){
                 e.printStackTrace();
             }

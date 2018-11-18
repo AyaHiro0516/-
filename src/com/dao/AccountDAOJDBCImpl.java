@@ -18,7 +18,7 @@ public class AccountDAOJDBCImpl implements AccountDAO {
     private static Connection conn = null;
     private static PreparedStatement ps = null;
     private static ResultSet rs = null;
-    private static URL url=DaoFactory.class.getResource("/config/ATMSystem.xml");
+    private static URL url=AccountDAOJDBCImpl.class.getResource("/config/ATMSystem.xml");
     static {  //加载配置文件
         try{
             SAXReader reader=new SAXReader();
@@ -33,9 +33,11 @@ public class AccountDAOJDBCImpl implements AccountDAO {
             e.printStackTrace();
         }
     }
+
     public static Connection getConnection() throws SQLException {
         return DriverManager.getConnection(DB_URL,USER,PASS);
     }
+
     public static void closeAll(){
         try {
             rs.close();
@@ -45,6 +47,7 @@ public class AccountDAOJDBCImpl implements AccountDAO {
             e.printStackTrace();
         }
     }
+
     @Override
     public long returnId() {
         long id=0;
@@ -141,6 +144,7 @@ public class AccountDAOJDBCImpl implements AccountDAO {
         }
 
     }
+
     @Override
     public void addAccount(long userId, String password, String name, String personId, String email, String adress, String acType) {
         try {
@@ -162,6 +166,7 @@ public class AccountDAOJDBCImpl implements AccountDAO {
             closeAll();
         }
     }
+
     @Override
     public void upDateBalance(String name, double amount) {
         String acType=Bank.getBank().getAccounts().get(name).getAccountType();  //可优化
@@ -187,6 +192,7 @@ public class AccountDAOJDBCImpl implements AccountDAO {
             closeAll();
         }
     }
+
     @Override
     public void upDateCeiling(String name, double amount) {
         String acType=Bank.getBank().getAccounts().get(name).getAccountType();
@@ -212,6 +218,7 @@ public class AccountDAOJDBCImpl implements AccountDAO {
             closeAll();
         }
     }
+
     @Override
     public void upDateLoan(String name, double amount) {
         String acType=Bank.getBank().getAccounts().get(name).getAccountType();
