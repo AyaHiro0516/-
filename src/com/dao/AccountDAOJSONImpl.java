@@ -91,7 +91,7 @@ public class AccountDAOJSONImpl implements AccountDAO{
             Set<String> keys=map.keySet();
             for (String userName:keys) {
                 JsonElement accInfo = details.get(userName);
-                JsonObject infoField=accInfo.getAsJsonObject(); //获取Account里的属性节点\
+                JsonObject infoField=accInfo.getAsJsonObject(); //获取Account里的属性节点
 
                 long userId=infoField.get("id").getAsLong();
                 String passWord=infoField.get("password").getAsString();
